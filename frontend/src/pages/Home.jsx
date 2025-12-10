@@ -68,12 +68,6 @@ const Home = () => {
     { number: '15+', label: 'Years Experience', icon: TrendingUp, color: 'from-orange-500 to-amber-500' },
   ];
 
-  const features = [
-    { icon: Zap, title: 'Lightning Fast', description: 'Quick response times' },
-    { icon: Globe, title: 'Wide Coverage', description: 'Pan-India network' },
-    { icon: BarChart3, title: 'Data Driven', description: 'Real-time analytics' },
-    { icon: Sparkles, title: 'Premium Quality', description: 'Luxury experience' },
-  ];
 
   return (
     <>
@@ -82,331 +76,378 @@ const Home = () => {
         <meta name="description" content="Premium corporate transportation services. Employee transport, airport transfers, and corporate travel solutions trusted by MNCs and IT companies." />
       </Helmet>
 
-      {/* Hero Section - Premium Design */}
-      <section className="relative bg-gradient-to-br from-navy via-navy via-royal-blue to-blue-900 text-white overflow-hidden py-20 md:py-24">
-        {/* Background Image */}
-        {/* 
-          To use your own image:
-          1. Place your image in frontend/public/images/hero-bg.jpg
-          2. Replace the URL below with: '/images/hero-bg.jpg'
-          Or use any external image URL
-        */}
+      {/* Hero Section - Left Aligned Content with Cars Background */}
+      <section className="relative text-white overflow-hidden min-h-[70vh] flex items-center">
+        {/* Background Image with Cars */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
-            // Alternative: Use local image - backgroundImage: `url('/images/hero-bg.jpg')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
           }}
         >
-          {/* Very Light Overlay for Text Readability - Minimal opacity to show image clearly */}
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/20 via-royal-blue/15 to-blue-900/20"></div>
+          {/* Dark Blue Overlay */}
+          <div className="absolute inset-0 bg-navy/85"></div>
         </div>
 
-        {/* Simple Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-20">
+          <div className="max-w-6xl">
+            <div className="text-left max-w-3xl">
+              {/* Tagline */}
+              <div className="text-sm font-semibold text-gray-300 mb-6 tracking-wider uppercase">
+                YOUR TRUSTED CORPORATE TRAVEL PARTNER
+              </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight"
-              >
-                <span className="block">Corporate</span>
-                <span className="block bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent">
-                  Commute, Simplified
+              {/* Main Headline */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                <span className="text-white">Reliable Transportation Services for </span>
+                <span className="text-royal-blue">
+                  Corporates & Travelers
                 </span>
-              </motion.h1>
+              </h1>
               
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto"
-              >
-                MN Travels - Your trusted travel partner for MNCs and IT companies. Premium transport solutions for corporate excellence with 24/7 support, GPS tracking, and unmatched reliability. Serving 500+ corporate clients across India.
-              </motion.p>
+              {/* Description */}
+              <p className="text-lg md:text-xl text-white mb-10 leading-relaxed">
+                Premium travel solutions with a wide fleet from 4 to 50 seater vehicles. Experience safe, comfortable, and punctual transportation across the city and beyond.
+              </p>
               
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-              >
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-royal-blue to-blue-600 hover:from-blue-600 hover:to-royal-blue rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
+                  className="inline-flex items-center justify-center px-10 py-4 bg-royal-blue hover:bg-blue-600 text-white rounded-lg font-semibold text-lg transition-all"
                 >
-                  Book Service
-                  <ArrowRight className="ml-2" size={20} />
+                  Book Now <span className="ml-2 text-xl">></span>
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl font-bold text-lg transition-all"
+                  className="inline-flex items-center justify-center px-10 py-4 bg-navy border-2 border-royal-blue/50 text-white hover:bg-navy/90 rounded-lg font-semibold text-lg transition-all"
                 >
-                  Contact Sales
+                  Contact Us
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+
+              {/* Stats Section */}
+              <div className="flex flex-wrap gap-12 md:gap-16 lg:gap-20">
+                <div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">500+</div>
+                  <div className="text-sm text-gray-300">Corporate Clients</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">50K+</div>
+                  <div className="text-sm text-gray-300">Trips Completed</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">15+</div>
+                  <div className="text-sm text-gray-300">Years Experience</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-white/60"
-          >
-            <span className="text-sm font-medium">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1.5 h-1.5 bg-white rounded-full"
-              />
-            </div>
-          </motion.div>
-        </motion.div>
       </section>
 
-      {/* Premium Features Bar */}
-      <section className="relative -mt-20 z-20">
-        <div className="container mx-auto px-4">
-          <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200 p-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
+
+      {/* Why Choose MN Travels Section */}
+      <section className="pt-20 md:pt-28 pb-8 md:pb-12 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-royal-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16 md:mb-20"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6"
+              >
+                <Star className="text-royal-blue" size={16} fill="currentColor" />
+                <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Why MN Travels?</span>
+              </motion.div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-6 leading-tight">
+                The MN Travels
+                <span className="block bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
+                  Difference
+                </span>
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                For over 15 years, we've been a trusted partner, earning and maintaining the confidence of corporate clients across India. We deliver excellence in every journey.
+              </p>
+            </motion.div>
+
+            {/* Features Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-4 mb-12">
+              {highlights.map((highlight, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-center group"
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="group bg-white rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-5 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-royal-blue/30"
                 >
-                  <div className="inline-flex p-4 bg-gradient-to-br from-royal-blue to-blue-600 rounded-2xl mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                    <feature.icon className="text-white" size={28} />
+                  <div className="flex flex-col items-start gap-3 lg:gap-4">
+                    {/* Icon */}
+                    <div className={`flex-shrink-0 w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 bg-gradient-to-br ${highlight.color} rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <highlight.icon className="text-white" size={20} />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 w-full">
+                      <div className="flex flex-col gap-1 mb-2">
+                        <h3 className="text-sm md:text-base lg:text-sm xl:text-base font-bold text-navy group-hover:text-royal-blue transition-colors leading-tight">
+                          {highlight.text}
+                        </h3>
+                        <div className="text-xl md:text-2xl lg:text-xl xl:text-2xl font-bold bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
+                          {highlight.number}
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-500 font-medium mb-2 lg:mb-3">{highlight.subtext}</p>
+                      
+                      {index === 0 && (
+                        <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 lg:line-clamp-4">
+                          Serving leading MNCs and IT companies including Infosys, TCS, Wipro, and Accenture. We provide reliable and professional transportation solutions that meet the highest standards of corporate excellence.
+                        </p>
+                      )}
+                      {index === 1 && (
+                        <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 lg:line-clamp-4">
+                          Operating round the clock to ensure your transportation needs are met at any time. Whether it's early morning employee pickups or late-night airport transfers, we're always ready.
+                        </p>
+                      )}
+                      {index === 2 && (
+                        <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 lg:line-clamp-4">
+                          Safety is our top priority. Every vehicle in our fleet is fully insured, regularly maintained, and driven by verified professionals with compliance to all safety regulations.
+                        </p>
+                      )}
+                      {index === 3 && (
+                        <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 lg:line-clamp-4">
+                          We maintain the highest standards of service quality, consistently achieving exceptional customer satisfaction. Our commitment to excellence is reflected in every journey.
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <h3 className="font-bold text-navy mb-1">{feature.title}</h3>
-                  <p className="text-sm text-gray-600">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Enhanced Scrolling Ticker */}
-      <section className="bg-gradient-to-r from-royal-blue via-blue-600 to-cyan-600 text-white py-6 overflow-hidden relative">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)] animate-shimmer"></div>
-        <div className="container mx-auto relative z-10">
-          <div className="flex items-center justify-center mb-3">
-            <span className="text-sm font-bold uppercase tracking-widest opacity-90 flex items-center gap-2">
-              <Sparkles size={16} />
-              Our Services
-            </span>
-          </div>
-          <motion.div
-            className="flex space-x-12 whitespace-nowrap"
-            animate={{
-              x: [0, -1400],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 30,
-                ease: 'linear',
-              },
-            }}
-          >
-            {['Employee Transport', 'Airport Transfers', 'Hotel Adhoc', 'Local & Outstation', 'Premium Vehicles', '24/7 Support', 'GPS Tracking', 'Corporate Events', 'Luxury Fleet', 'Executive Travel'].map((item, index) => (
-              <span key={index} className="text-lg font-bold mx-6 flex items-center gap-3">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                {item}
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Choose MN Travels Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-              {/* Left Column - Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="space-y-4 md:space-y-6"
-              >
-                <div>
-                  <span className="text-royal-blue font-semibold text-xs md:text-sm uppercase tracking-wide">
-                    / Why MN Travels?
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy leading-tight">
-                  The MN Travels
-                  <br />
-                  Difference
-                </h2>
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                  For over 15 years, we've been a proud service provider, earning and maintaining the trust of corporate clients across India. We deliver excellence in every journey with reliable, safe, and professional transportation solutions.
-                </p>
-                <div className="flex flex-col gap-3 pt-2 md:pt-4">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center text-royal-blue font-semibold hover:text-blue-700 transition-colors text-sm md:text-base"
-                  >
-                    Contact Us
-                    <ArrowRight className="ml-2" size={16} />
-                  </Link>
-                  <Link
-                    to="/services"
-                    className="inline-flex items-center text-royal-blue font-semibold hover:text-blue-700 transition-colors text-sm md:text-base"
-                  >
-                    View Services
-                    <ArrowRight className="ml-2" size={16} />
-                  </Link>
-                </div>
-              </motion.div>
-
-              {/* Right Column - Features List */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="lg:border-l lg:border-gray-200 lg:pl-12 pt-6 lg:pt-0"
-              >
-                <div className="space-y-6 md:space-y-0">
-                  {highlights.map((highlight, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className={`pb-6 md:pb-8 ${index < highlights.length - 1 ? 'border-b border-gray-200' : ''}`}
-                    >
-                      <div className="flex items-start gap-3 md:gap-4">
-                        <div className={`flex-shrink-0 p-2.5 md:p-3 bg-gradient-to-br ${highlight.color} rounded-lg`}>
-                          <highlight.icon className="text-white" size={20} />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg md:text-xl font-bold text-navy mb-2">
-                            {highlight.text}
-                          </h3>
-                          {index === 0 && (
-                            <p className="text-gray-600 text-sm md:text-base">
-                              MN Travels serves leading MNCs and IT companies including Infosys, TCS, Wipro, and Accenture. We provide reliable and professional transportation solutions that meet the highest standards of corporate excellence with competitive pricing.
-                            </p>
-                          )}
-                          {index === 1 && (
-                            <p className="text-gray-600 text-sm md:text-base">
-                              MN Travels operates round the clock, ensuring your transportation needs are met at any time. Whether it's early morning employee pickups or late-night airport transfers, MN Travels is always ready with 24/7 support.
-                            </p>
-                          )}
-                          {index === 2 && (
-                            <p className="text-gray-600 text-sm md:text-base">
-                              Safety is MN Travels' top priority. Every vehicle in our fleet is fully insured, regularly maintained, and driven by verified professionals. We ensure compliance with all safety regulations and standards.
-                            </p>
-                          )}
-                          {index === 3 && (
-                            <p className="text-gray-600 text-sm md:text-base">
-                              MN Travels maintains the highest standards of service quality, consistently achieving a 98% customer satisfaction rate. Our commitment to excellence is reflected in every journey we facilitate for our corporate clients.
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center pt-8"
+            >
+              <div className="inline-flex flex-col sm:flex-row items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-royal-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  Get Started Today
+                  <ArrowRight className="ml-2" size={20} />
+                </Link>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center px-8 py-4 bg-white border-2 border-gray-300 hover:border-royal-blue text-navy hover:text-royal-blue rounded-lg font-semibold text-base transition-all duration-300"
+                >
+                  Explore Our Services
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Our Services Section */}
-      <section className="py-20 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-white relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, #005bb5 1px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Our Services
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6"
+            >
+              <Sparkles className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Our Services</span>
+            </motion.div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 md:mb-6 leading-tight">
+              Comprehensive Transportation
+              <span className="block bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
+                Solutions
+              </span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Comprehensive transportation solutions tailored for corporate needs
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Tailored corporate transportation services designed to meet the unique needs of modern businesses
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Services Grid - 2 columns on mobile, 2 on tablet, 5 on desktop (one row) */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-4 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <ServiceCard key={index} service={service} index={index} />
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <Link
-              to="/services"
-              className="inline-flex items-center px-6 py-3 bg-royal-blue text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-md hover:shadow-lg"
-            >
-              View All Services
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+      <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            {/* Section Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 md:p-12 shadow-lg text-center"
+              transition={{ duration: 0.6 }}
+              className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium mb-4">
-                Testimonials
-              </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-3 leading-tight">
-                Trusted by leaders
-                <br />
-                <span className="text-gray-600">from various industries</span>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-4"
+              >
+                <Star className="text-royal-blue" size={16} fill="currentColor" />
+                <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Testimonials</span>
+              </motion.div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 leading-tight">
+                Trusted by Leaders
+                <span className="block text-gray-600 text-2xl md:text-3xl lg:text-4xl font-normal mt-2">
+                  from Various Industries
+                </span>
               </h2>
-              <p className="text-gray-600 text-sm md:text-base mb-6 max-w-xl mx-auto">
-                Learn why professionals trust our solutions to complete their corporate transportation needs.
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Discover why professionals and businesses trust our solutions for their corporate transportation needs.
               </p>
+            </motion.div>
+
+            {/* Testimonial Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+              {/* Testimonial Card 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+                className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400" size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
+                  "MN Travels has been our trusted transportation partner for over 3 years. Their reliability and professionalism are unmatched."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-royal-blue to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                    JD
+                  </div>
+                  <div>
+                    <div className="font-semibold text-navy text-sm">John Davis</div>
+                    <div className="text-xs text-gray-500">CEO, TechCorp</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Testimonial Card 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400" size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
+                  "Excellent service quality and 24/7 support. Our employees appreciate the comfortable and safe commute experience."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold">
+                    SM
+                  </div>
+                  <div>
+                    <div className="font-semibold text-navy text-sm">Sarah Miller</div>
+                    <div className="text-xs text-gray-500">HR Director, GlobalIT</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Testimonial Card 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400" size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
+                  "The airport transfer service is exceptional. Always on time and professional drivers. Highly recommended!"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold">
+                    RK
+                  </div>
+                  <div>
+                    <div className="font-semibold text-navy text-sm">Robert Kumar</div>
+                    <div className="text-xs text-gray-500">Operations Manager</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
               <Link
                 to="/contact"
-                className="inline-flex items-center px-5 py-2.5 bg-navy text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-md hover:shadow-lg text-sm"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-royal-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Contact Us
-                <ArrowRight className="ml-2" size={18} />
+                <ArrowRight className="ml-2" size={20} />
               </Link>
             </motion.div>
           </div>

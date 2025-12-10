@@ -199,41 +199,64 @@ const About = () => {
         </div>
       </section>
 
-      {/* Journey Timeline */}
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      {/* Milestones & Achievements */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Milestones & Achievements
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6">
+              <Award className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Milestones & Achievements</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4 leading-tight">
+              Our Journey of Excellence
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A journey of growth, innovation, and excellence
+              Key milestones that shaped our growth and success
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
+          {/* Milestones Grid */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {milestones.map((milestone, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:shadow-lg transition-all"
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-royal-blue/30 overflow-hidden"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl font-bold text-royal-blue">{milestone.year}</div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-navy mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
+                  {/* Gradient Accent */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-royal-blue to-blue-600"></div>
+                  
+                  {/* Year Badge */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-royal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-white font-bold text-sm">{milestone.year}</span>
                     </div>
+                    <div className="h-px flex-1 bg-gradient-to-r from-gray-200 to-transparent"></div>
                   </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-royal-blue transition-colors">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {milestone.description}
+                  </p>
+
+                  {/* Decorative Element */}
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-royal-blue/5 rounded-full -mr-10 -mb-10 group-hover:bg-royal-blue/10 transition-colors"></div>
                 </motion.div>
               ))}
             </div>
@@ -242,52 +265,59 @@ const About = () => {
       </section>
 
       {/* Commitment Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-                Our Commitment
-              </h2>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6">
+              <Shield className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Our Commitment</span>
             </div>
-
-            <div className="bg-gray-50 rounded-xl p-8 md:p-10 shadow-md border border-gray-200 mb-8">
-              <p className="text-lg text-gray-700 leading-relaxed mb-8 text-center">
-                At MN Travels, we understand that corporate transportation is more than just moving people from point A to point B. It's about ensuring your employees arrive safely and on time, maintaining your company's professional image, and providing a service that reflects your business values. With over 15 years of experience, MN Travels has built a reputation for excellence in corporate transportation across India.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {commitments.map((commitment, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="flex-shrink-0 p-2.5 bg-royal-blue rounded-lg">
-                      <commitment.icon className="text-white" size={20} />
-                    </div>
-                    <p className="text-gray-700 text-sm pt-1">
-                      {commitment.text}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div className="text-center">
-              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                Trusted by leading MNCs and IT companies like Infosys, TCS, Wipro, and Accenture, MN Travels takes pride in being a reliable partner that helps businesses thrive by taking care of their transportation needs with excellence, innovation, and unwavering dedication. Our commitment to quality and customer satisfaction has made MN Travels the preferred choice for corporate transportation.
-              </p>
-            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+              What We Promise
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
+              At MN Travels, we understand that corporate transportation is more than just moving people. It's about ensuring safety, maintaining professionalism, and reflecting your business values.
+            </p>
+            <p className="text-base text-gray-500 max-w-2xl mx-auto">
+              With over 15 years of experience, we've built a reputation for excellence in corporate transportation across India.
+            </p>
           </motion.div>
+
+          {/* Commitment Cards - 2 Column Layout */}
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {commitments.map((commitment, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  whileHover={{ y: -5 }}
+                  className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-royal-blue/50"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-royal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                      <commitment.icon className="text-white" size={24} />
+                    </div>
+                    <div className="flex-1 pt-1">
+                      <p className="text-gray-700 leading-relaxed font-medium">
+                        {commitment.text}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

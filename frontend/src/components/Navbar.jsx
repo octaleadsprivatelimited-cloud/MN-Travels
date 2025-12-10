@@ -1,107 +1,186 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const navLinks = [
     { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
-    { path: '/about', label: 'About Us' },
+    { path: '/fleet', label: 'Fleet' },
     { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path) => location.pathname === path;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   return (
-    <nav className="bg-navy text-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-navy/95 backdrop-blur-md shadow-lg'
+          : 'bg-navy shadow-md'
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold">MN Travels</div>
-            <div className="w-8 h-8 border-2 border-royal-blue rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-royal-blue rounded-full"></div>
+          <Link
+            to="/"
+            className="flex items-center space-x-3 group"
+            onClick={() => setIsOpen(false)}
+          >
+            <div className="relative">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-royal-blue to-blue-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                <span className="text-white font-bold text-lg md:text-xl">M</span>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg md:text-xl font-bold text-white leading-tight">
+                MN Travels
+              </span>
+              <span className="text-xs text-gray-300 hidden sm:block">
+                Corporate Travel Partner
+              </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-3 py-2 transition-colors ${
+                className={`relative px-2 py-2 text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
-                    ? 'text-royal-blue'
-                    : 'text-white hover:text-royal-blue'
+                    ? 'text-white underline decoration-royal-blue decoration-2 underline-offset-4'
+                    : 'text-gray-200 hover:text-white'
                 }`}
               >
                 {link.label}
-                {isActive(link.path) && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-royal-blue"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
               </Link>
             ))}
-            <Link
-              to="/contact"
-              className="ml-4 px-6 py-2 bg-royal-blue hover:bg-opacity-90 rounded-md transition-colors font-medium"
-            >
-              Book Service
-            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* CTA Button & Mobile Menu Button */}
+          <div className="flex items-center space-x-3 md:space-x-4">
+            {/* Phone Number - Desktop */}
+            <a
+              href="tel:+1234567890"
+              className="hidden md:flex items-center space-x-2 text-white hover:text-royal-blue transition-colors font-medium text-sm"
+            >
+              <Phone size={18} />
+              <span>+1 234 567 890</span>
+            </a>
+
+            {/* Book Now Button - Desktop */}
+            <Link
+              to="/contact"
+              className="hidden lg:block px-6 py-2.5 bg-navy hover:bg-navy/90 border border-royal-blue/50 text-white rounded-lg transition-all duration-200 font-semibold text-sm"
+            >
+              Book Now
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-navy border-t border-royal-blue"
-          >
-            <div className="container mx-auto px-4 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-md transition-colors ${
-                    isActive(link.path)
-                      ? 'bg-royal-blue text-white'
-                      : 'text-white hover:bg-royal-blue hover:bg-opacity-20'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 bg-royal-blue text-white rounded-md text-center font-medium"
-              >
-                Book Service
-              </Link>
-            </div>
-          </motion.div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+            />
+            
+            {/* Mobile Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden bg-navy border-t border-white/10 shadow-2xl"
+            >
+              <div className="container mx-auto px-4 py-4 space-y-1">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center px-4 py-3 rounded-lg transition-all duration-200 ${
+                        isActive(link.path)
+                          ? 'bg-royal-blue text-white shadow-lg'
+                          : 'text-gray-200 hover:bg-white/5 hover:text-white'
+                      }`}
+                    >
+                      <span className="font-medium">{link.label}</span>
+                      {isActive(link.path) && (
+                        <motion.div
+                          layoutId="mobile-indicator"
+                          className="ml-auto w-2 h-2 bg-white rounded-full"
+                        />
+                      )}
+                    </Link>
+                  </motion.div>
+                ))}
+                
+                {/* Mobile CTA Buttons */}
+                <div className="pt-4 space-y-2 border-t border-white/10 mt-4">
+                  <a
+                    href="tel:+1234567890"
+                    className="flex items-center justify-center space-x-2 px-4 py-3 text-white hover:text-royal-blue transition-all duration-200 font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Phone size={18} />
+                    <span>+1 234 567 890</span>
+                  </a>
+                  <Link
+                    to="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className="block px-4 py-3 bg-navy border border-royal-blue/30 hover:bg-navy/90 text-white rounded-lg text-center font-semibold shadow-lg transition-all duration-200"
+                  >
+                    Book Now
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

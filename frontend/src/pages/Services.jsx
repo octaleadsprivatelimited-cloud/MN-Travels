@@ -9,6 +9,7 @@ const Services = () => {
     {
       icon: Users,
       title: 'Employee Transportation',
+      image: '/images/employee-transportation.jpg',
       description: 'Reliable daily commute solutions for your workforce. We provide safe, punctual, and comfortable transportation for employees, ensuring they reach their workplace on time every day with dedicated routes and professional drivers.',
       features: [
         'Dedicated fleet for daily routes',
@@ -25,6 +26,7 @@ const Services = () => {
     {
       icon: Plane,
       title: 'Airport Pickups / Drops',
+      image: '/images/airport-pickups-drops.jpg',
       description: 'Punctual airport transfers for executives, clients, and guests. Our professional drivers ensure seamless travel experiences with meet-and-greet services, flight monitoring, and premium vehicle options.',
       features: [
         'Real-time flight monitoring',
@@ -41,6 +43,7 @@ const Services = () => {
     {
       icon: Building2,
       title: 'Hotel Adhoc Transport',
+      image: '/images/hotel-adhoc-transport.jpg',
       description: 'On-demand transportation services for hotel guests and corporate visitors. Available 24/7 for immediate travel needs with quick response times and multiple vehicle options.',
       features: [
         '24/7 availability',
@@ -57,6 +60,7 @@ const Services = () => {
     {
       icon: Route,
       title: 'Local & Outstation Trips',
+      image: '/images/local-outstation-trips.jpg',
       description: 'Comfortable travel solutions for business trips, conferences, and corporate events. Whether local or outstation, we ensure a smooth journey with customized packages.',
       features: [
         'Local and long-distance trips',
@@ -73,6 +77,7 @@ const Services = () => {
     {
       icon: Car,
       title: 'Premium & Luxury Car Hire',
+      image: '/images/premium-vehicle-fleet.jpg',
       description: 'Premium and luxury vehicles for special occasions, VIP transfers, and executive travel. Experience comfort and style with our high-end fleet featuring premium interiors.',
       features: [
         'Luxury sedan options',
@@ -214,13 +219,24 @@ const Services = () => {
 
                 {/* Visual Side */}
                 <div className="flex-1">
-                  <div className={`${service.gradient} rounded-2xl p-8 border border-gray-200 shadow-lg`}>
-                    <div className="text-center">
-                      <div className="inline-flex p-5 bg-royal-blue rounded-xl mb-6">
-                        <service.icon className="text-white" size={48} />
+                  <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg h-full min-h-[400px]">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    {/* Icon Badge */}
+                    <div className="absolute top-6 right-6">
+                      <div className="inline-flex p-4 bg-royal-blue rounded-xl shadow-xl">
+                        <service.icon className="text-white" size={32} />
                       </div>
-                      <h3 className="text-xl font-bold text-navy mb-4">{service.title}</h3>
-                      <div className="flex justify-center gap-6">
+                    </div>
+                    {/* Stats Overlay */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="flex justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-xl p-4">
                         <div className="text-center">
                           <div className="text-2xl font-bold text-navy">{service.stats.clients}</div>
                           <div className="text-sm text-gray-600">Clients</div>
