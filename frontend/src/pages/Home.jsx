@@ -65,7 +65,7 @@ const Home = () => {
     { number: '500+', label: 'Corporate Clients', icon: Building2, color: 'from-blue-500 to-cyan-500' },
     { number: '1000+', label: 'Vehicles in Fleet', icon: Car, color: 'from-purple-500 to-pink-500' },
     { number: '50K+', label: 'Daily Commuters', icon: Users, color: 'from-green-500 to-emerald-500' },
-    { number: '15+', label: 'Years Experience', icon: TrendingUp, color: 'from-orange-500 to-amber-500' },
+    { number: '20+', label: 'Years Experience', icon: TrendingUp, color: 'from-orange-500 to-amber-500' },
   ];
 
 
@@ -137,7 +137,7 @@ const Home = () => {
                   <div className="text-sm text-gray-300">Trips Completed</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">15+</div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">20+</div>
                   <div className="text-sm text-gray-300">Years Experience</div>
                 </div>
               </div>
@@ -180,7 +180,7 @@ const Home = () => {
                 </span>
               </h2>
               <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                For over 15 years, we've been a trusted partner, earning and maintaining the confidence of corporate clients across India. We deliver excellence in every journey.
+                For over 20 years, we've been a trusted partner, earning and maintaining the confidence of corporate clients across India. We deliver excellence in every journey.
               </p>
             </motion.div>
 

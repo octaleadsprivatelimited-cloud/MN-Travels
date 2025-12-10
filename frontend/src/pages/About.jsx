@@ -42,7 +42,7 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '15+', label: 'Years Experience', icon: TrendingUp, color: 'from-blue-500 to-cyan-500' },
+    { number: '20+', label: 'Years Experience', icon: TrendingUp, color: 'from-blue-500 to-cyan-500' },
     { number: '500+', label: 'Corporate Clients', icon: Building2, color: 'from-purple-500 to-pink-500' },
     { number: '1000+', label: 'Vehicles', icon: Users, color: 'from-green-500 to-emerald-500' },
     { number: '98%', label: 'Satisfaction Rate', icon: Star, color: 'from-orange-500 to-amber-500' },
@@ -77,7 +77,7 @@ const About = () => {
               About MN Travels
             </h1>
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-              Your trusted partner in corporate transportation. We've been serving businesses with excellence, reliability, and innovation for over 15 years.
+              Your trusted partner in corporate transportation. We've been serving businesses with excellence, reliability, and innovation for over 20 years.
             </p>
           </motion.div>
         </div>
@@ -287,7 +287,7 @@ const About = () => {
               At MN Travels, we understand that corporate transportation is more than just moving people. It's about ensuring safety, maintaining professionalism, and reflecting your business values.
             </p>
             <p className="text-base text-gray-500 max-w-2xl mx-auto">
-              With over 15 years of experience, we've built a reputation for excellence in corporate transportation across India.
+              With over 20 years of experience, we've built a reputation for excellence in corporate transportation across India.
             </p>
           </motion.div>
 
