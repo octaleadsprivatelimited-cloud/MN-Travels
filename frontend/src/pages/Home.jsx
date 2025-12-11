@@ -269,14 +269,22 @@ const Home = () => {
       </section>
 
       {/* Our Services Section */}
-      <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-white relative overflow-hidden">
-        {/* Background Decoration */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+      <section className="pt-8 md:pt-12 pb-20 md:pb-28 relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, #005bb5 1px, transparent 0)`,
             backgroundSize: '50px 50px'
           }}></div>
         </div>
+        
+        {/* Gradient Overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-royal-blue/5 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-royal-blue/5 to-transparent"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-royal-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
@@ -318,8 +326,25 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-8 md:pt-12 pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 3px 3px, #005bb5 1.5px, transparent 0)`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+        
+        {/* Gradient Overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-purple-400/10 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-pink-400/10 to-transparent"></div>
+        
+        {/* Decorative Blur Elements */}
+        <div className="absolute top-10 left-20 w-80 h-80 bg-purple-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-pink-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-royal-blue/5 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             {/* Section Header */}
             <motion.div
@@ -455,7 +480,7 @@ const Home = () => {
       </section>
 
       {/* Trusted By Industry Leaders Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -475,8 +500,42 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-navy to-royal-blue text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 md:py-20 relative overflow-hidden text-white" style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)',
+        backgroundSize: '400% 400%',
+        animation: 'gradientShift 15s ease infinite'
+      }}>
+        {/* Animated Gradient Background */}
+        <style>{`
+          @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `}</style>
+        
+        {/* Dark Overlay for Readability */}
+        <div className="absolute inset-0 bg-navy/60"></div>
+        
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-15">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.4) 1px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
+        
+        {/* Geometric Shapes */}
+        <div className="absolute top-20 left-20 w-24 h-24 border-2 border-white/15 rotate-45 rounded-lg"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 border-2 border-white/15 rotate-12 rounded-full"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-white/10 rotate-45 rounded"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -231,7 +231,10 @@ Use the admin API or directly insert into MongoDB:
 - `sedan` - Sedan cars
 - `suv` - SUV vehicles
 - `tempo` - Tempo Traveller
-- `bus` - Buses
+- `urbania` - Urbania vehicles
+- `minibus` - Mini Bus (20 seater to 50 Seater)
+- `premium` - Premium cars
+- `luxury` - Luxury cars (All types of premium & luxurious cars)
 
 ## 📄 License
 
@@ -239,7 +242,7 @@ This project is proprietary software.
 
 ## 👥 Support
 
-For support, email info@mntravels.com or contact through the website.
+For support, email info@mntravels.in or contact through the website.
 
 ---
 

@@ -55,33 +55,73 @@ const Fleet = () => {
           },
           {
             _id: '4',
-            name: '22 Seater Bus',
-            type: 'bus',
-            capacity: '22',
-            description: 'Ideal for employee transportation with comfortable seats and modern amenities',
-            features: ['AC', 'Comfortable Seats', 'Luggage Space', 'Reading Lights', 'USB Charging'],
+            name: '20 Seater Urbania',
+            type: 'urbania',
+            capacity: '20',
+            description: 'Premium Urbania with luxurious interiors, perfect for corporate group travel with enhanced comfort',
+            features: ['AC', 'Premium Seating', 'Spacious Interior', 'Entertainment System', 'USB Charging'],
             isAvailable: true,
             pricePerKm: 20,
           },
           {
             _id: '5',
-            name: '30 Seater Bus',
-            type: 'bus',
-            capacity: '30',
-            description: 'Perfect for large group transportation with premium seating and entertainment options',
-            features: ['AC', 'Spacious', 'Safe Travel', 'Entertainment', 'WiFi Ready'],
+            name: '25 Seater Mini Bus',
+            type: 'minibus',
+            capacity: '25',
+            description: 'Ideal for employee transportation with comfortable seats and modern amenities',
+            features: ['AC', 'Comfortable Seats', 'Luggage Space', 'Reading Lights', 'USB Charging'],
             isAvailable: true,
             pricePerKm: 22,
           },
           {
             _id: '6',
-            name: '50 Seater Bus',
-            type: 'bus',
-            capacity: '50',
-            description: 'Large capacity bus for corporate events with premium amenities and comfort features',
+            name: '30 Seater Mini Bus',
+            type: 'minibus',
+            capacity: '30',
+            description: 'Perfect for large group transportation with premium seating and entertainment options',
+            features: ['AC', 'Spacious', 'Safe Travel', 'Entertainment', 'WiFi Ready'],
+            isAvailable: true,
+            pricePerKm: 24,
+          },
+          {
+            _id: '7',
+            name: '40 Seater Mini Bus',
+            type: 'minibus',
+            capacity: '40',
+            description: 'Large capacity mini bus for corporate events with premium amenities and comfort features',
             features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points'],
             isAvailable: true,
+            pricePerKm: 26,
+          },
+          {
+            _id: '8',
+            name: '50 Seater Mini Bus',
+            type: 'minibus',
+            capacity: '50',
+            description: 'Maximum capacity mini bus for large corporate events with all premium features',
+            features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points', 'GPS Tracking'],
+            isAvailable: true,
+            pricePerKm: 28,
+          },
+          {
+            _id: '9',
+            name: 'Premium Sedan',
+            type: 'premium',
+            capacity: '4',
+            description: 'Premium sedan with top-tier features, perfect for VIP corporate travel and executive meetings',
+            features: ['Premium AC', 'Advanced GPS', 'Leather Interior', 'Premium Sound System', 'Sunroof'],
+            isAvailable: true,
             pricePerKm: 25,
+          },
+          {
+            _id: '10',
+            name: 'Luxury Sedan',
+            type: 'luxury',
+            capacity: '4',
+            description: 'Ultra-luxury sedan with world-class amenities, perfect for high-profile corporate clients',
+            features: ['Climate Control', 'Premium Leather', 'Massage Seats', 'Premium Audio', 'Chauffeur Service'],
+            isAvailable: true,
+            pricePerKm: 35,
           },
         ]);
       } finally {
@@ -100,7 +140,13 @@ const Fleet = () => {
         return Car;
       case 'tempo':
         return Car;
-      case 'bus':
+      case 'urbania':
+        return Car;
+      case 'minibus':
+        return Car;
+      case 'premium':
+        return Car;
+      case 'luxury':
         return Car;
       default:
         return Car;
@@ -115,8 +161,14 @@ const Fleet = () => {
         return 'from-purple-500 via-purple-600 to-pink-600';
       case 'tempo':
         return 'from-green-500 via-emerald-600 to-teal-600';
-      case 'bus':
+      case 'urbania':
+        return 'from-indigo-500 via-indigo-600 to-purple-600';
+      case 'minibus':
         return 'from-orange-500 via-amber-600 to-yellow-600';
+      case 'premium':
+        return 'from-rose-500 via-pink-600 to-red-600';
+      case 'luxury':
+        return 'from-amber-500 via-yellow-600 to-orange-600';
       default:
         return 'from-royal-blue via-blue-600 to-cyan-600';
     }
@@ -126,8 +178,11 @@ const Fleet = () => {
     { value: 'all', label: 'All Vehicles', icon: Car, count: vehicles.length },
     { value: 'sedan', label: 'Sedans', icon: Car, count: vehicles.filter(v => v.type === 'sedan').length },
     { value: 'suv', label: 'SUVs', icon: Car, count: vehicles.filter(v => v.type === 'suv').length },
-    { value: 'tempo', label: 'Tempo', icon: Car, count: vehicles.filter(v => v.type === 'tempo').length },
-    { value: 'bus', label: 'Buses', icon: Car, count: vehicles.filter(v => v.type === 'bus').length },
+    { value: 'tempo', label: 'Tempo Traveller', icon: Car, count: vehicles.filter(v => v.type === 'tempo').length },
+    { value: 'urbania', label: 'Urbania', icon: Car, count: vehicles.filter(v => v.type === 'urbania').length },
+    { value: 'minibus', label: 'Mini Bus (20-50 Seater)', icon: Car, count: vehicles.filter(v => v.type === 'minibus').length },
+    { value: 'premium', label: 'Premium Cars', icon: Car, count: vehicles.filter(v => v.type === 'premium').length },
+    { value: 'luxury', label: 'Luxury Cars', icon: Car, count: vehicles.filter(v => v.type === 'luxury').length },
   ];
 
   const filteredVehicles = vehicles.filter(vehicle => {
@@ -148,7 +203,7 @@ const Fleet = () => {
     <>
       <Helmet>
         <title>Fleet - MN Travels | Our Vehicle Fleet</title>
-        <meta name="description" content="Explore our diverse fleet of vehicles including sedans, SUVs, tempo travellers, and buses. From 4-seater sedans to 50-seater buses." />
+        <meta name="description" content="Explore our diverse fleet of vehicles including Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), and all types of premium & luxurious cars." />
       </Helmet>
 
       {/* Hero Section */}

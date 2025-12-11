@@ -3,10 +3,24 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const footerBgImage = '/images/footer-bg.jpeg';
 
   return (
-    <footer className="bg-navy text-white">
-      <div className="container mx-auto px-4 py-12">
+    <footer 
+      className="relative text-white overflow-hidden bg-navy"
+      style={{
+        backgroundImage: `url(${footerBgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark Overlay for Readability */}
+      <div className="absolute inset-0 bg-navy/50"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -69,11 +83,19 @@ const Footer = () => {
             <ul className="space-y-3 text-silver-gray text-sm">
               <li className="flex items-start space-x-2">
                 <Phone size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <div className="flex flex-col">
+                  <a href="tel:+919900109686" className="hover:text-royal-blue transition-colors">+91 99001 09686</a>
+                  <a href="tel:+919743484699" className="hover:text-royal-blue transition-colors">+91 97434 84699</a>
+                  <a href="tel:+918951635782" className="hover:text-royal-blue transition-colors">+91 89516 35782</a>
+                </div>
               </li>
               <li className="flex items-start space-x-2">
                 <Mail size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />
-                <span>info@mntravels.com</span>
+                <div className="flex flex-col">
+                  <a href="mailto:info@mntravels.in" className="hover:text-royal-blue transition-colors">info@mntravels.in</a>
+                  <a href="mailto:prasad@mntravels.in" className="hover:text-royal-blue transition-colors">prasad@mntravels.in</a>
+                  <a href="mailto:nagaveni@mntravels.in" className="hover:text-royal-blue transition-colors">nagaveni@mntravels.in</a>
+                </div>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />

@@ -35,7 +35,7 @@ const About = () => {
   const milestones = [
     { year: '2009', title: 'MN Travels Founded', description: 'Started with a vision to revolutionize corporate transportation in India, focusing on MNCs and IT companies' },
     { year: '2012', title: '100+ Corporate Clients', description: 'Reached milestone of serving 100+ corporate clients including major IT companies in NCR region' },
-    { year: '2015', title: 'Fleet Expansion', description: 'Expanded MN Travels fleet to 500+ vehicles across sedans, SUVs, tempo travellers, and buses' },
+    { year: '2015', title: 'Fleet Expansion', description: 'Expanded MN Travels fleet to 500+ vehicles including Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), and all types of premium & luxurious cars' },
     { year: '2018', title: 'Technology Integration', description: 'MN Travels launched GPS tracking and real-time monitoring systems for enhanced service delivery' },
     { year: '2021', title: '500+ Clients Milestone', description: 'MN Travels achieved milestone of serving 500+ corporate clients across India' },
     { year: '2024', title: 'Industry Leader', description: 'MN Travels recognized as leading corporate transportation provider trusted by Fortune 500 companies' },
@@ -110,56 +110,112 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header with Better Typography */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 md:mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6"
+            >
+              <Target className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Our Foundation</span>
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
               Mission & Vision
             </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              The principles that guide our commitment to excellence
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Enhanced Cards with Better UI/UX */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            {/* Mission Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-md border border-gray-200"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group relative bg-white rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="inline-flex p-4 bg-royal-blue rounded-lg mb-6">
-                <Target className="text-white" size={32} />
+              {/* Decorative Accent */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-royal-blue via-blue-500 to-cyan-500 rounded-t-2xl"></div>
+              
+              {/* Icon with Enhanced Design */}
+              <div className="inline-flex p-5 bg-gradient-to-br from-royal-blue to-blue-600 rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Target className="text-white" size={36} />
               </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">Our Mission</h2>
-                  <p className="text-gray-600 leading-relaxed">
-                    At MN Travels, our mission is to provide reliable, safe, and premium corporate transportation services that enable businesses to focus on their core operations. We handle their mobility needs with excellence, innovation, and unwavering commitment to quality, ensuring every journey with MN Travels is comfortable, punctual, and safe.
-                  </p>
+              
+              {/* Content */}
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-5 leading-tight">
+                Our Mission
+              </h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+                At MN Travels, our mission is to provide reliable, safe, and premium corporate transportation services that enable businesses to focus on their core operations. We handle their mobility needs with excellence, innovation, and unwavering commitment to quality, ensuring every journey with MN Travels is comfortable, punctual, and safe.
+              </p>
+              
+              {/* Decorative Element */}
+              <div className="flex items-center gap-2 text-royal-blue mt-6">
+                <div className="w-12 h-0.5 bg-gradient-to-r from-royal-blue to-transparent"></div>
+                <div className="w-2 h-2 bg-royal-blue rounded-full"></div>
+              </div>
             </motion.div>
 
+            {/* Vision Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-md border border-gray-200"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group relative bg-white rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="inline-flex p-4 bg-royal-blue rounded-lg mb-6">
-                <Eye className="text-white" size={32} />
+              {/* Decorative Accent */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-t-2xl"></div>
+              
+              {/* Icon with Enhanced Design */}
+              <div className="inline-flex p-5 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Eye className="text-white" size={36} />
               </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">Our Vision</h2>
-                  <p className="text-gray-600 leading-relaxed">
-                    MN Travels envisions becoming the leading corporate transportation partner in India, recognized for our commitment to safety, punctuality, customer satisfaction, and continuous innovation. We aim to set new standards in the corporate transportation industry while expanding our reach to serve more businesses across the country.
-                  </p>
+              
+              {/* Content */}
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-5 leading-tight">
+                Our Vision
+              </h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+                MN Travels envisions becoming the leading corporate transportation partner in India, recognized for our commitment to safety, punctuality, customer satisfaction, and continuous innovation. We aim to set new standards in the corporate transportation industry while expanding our reach to serve more businesses across the country.
+              </p>
+              
+              {/* Decorative Element */}
+              <div className="flex items-center gap-2 text-indigo-600 mt-6">
+                <div className="w-12 h-0.5 bg-gradient-to-r from-indigo-600 to-transparent"></div>
+                <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50/40 to-purple-50/30">
+        {/* Gradient Overlays for Depth */}
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-royal-blue/10 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-indigo-400/10 to-transparent"></div>
+        
+        {/* Decorative Blur Elements - Color Only */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-400/6 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,8 +256,17 @@ const About = () => {
       </section>
 
       {/* Milestones & Achievements */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-br from-purple-50/40 via-pink-50/30 to-orange-50/20">
+        {/* Gradient Overlays for Depth */}
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-purple-400/10 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-orange-400/10 to-transparent"></div>
+        
+        {/* Decorative Blur Elements - Color Only */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-pink-400/6 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -265,8 +330,17 @@ const About = () => {
       </section>
 
       {/* Commitment Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-br from-emerald-50/40 via-teal-50/30 to-cyan-50/20">
+        {/* Gradient Overlays for Depth */}
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-emerald-400/10 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-cyan-400/10 to-transparent"></div>
+        
+        {/* Decorative Blur Elements - Color Only */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-cyan-400/6 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -322,8 +396,17 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-navy to-royal-blue text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-navy via-royal-blue to-indigo-900 text-white">
+        {/* Gradient Overlays for Depth */}
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-blue-500/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-indigo-500/20 to-transparent"></div>
+        
+        {/* Decorative Blur Elements - Color Only */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
