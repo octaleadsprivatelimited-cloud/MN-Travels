@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Fleet from './pages/Fleet';
@@ -10,7 +11,9 @@ import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="services" element={<Services />} />
@@ -21,6 +24,7 @@ function App() {
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
     </Routes>
+    </>
   );
 }
 

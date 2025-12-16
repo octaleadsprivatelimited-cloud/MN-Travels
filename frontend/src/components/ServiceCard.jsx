@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 const ServiceCard = ({ service, index }) => {
@@ -65,10 +66,13 @@ const ServiceCard = ({ service, index }) => {
         )}
         
         {/* Learn More Link */}
-        <div className="flex items-center text-royal-blue font-semibold text-xs group-hover:gap-2 transition-all mt-auto">
+        <Link
+          to="/services"
+          className="flex items-center text-royal-blue font-semibold text-xs group-hover:gap-2 transition-all mt-auto hover:text-blue-600 cursor-pointer"
+        >
           <span>Learn more</span>
           <ArrowRight className="ml-1 group-hover:translate-x-2 transition-transform" size={14} />
-        </div>
+        </Link>
       </div>
     </motion.div>
   );
