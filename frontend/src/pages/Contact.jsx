@@ -120,7 +120,10 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-navy to-royal-blue text-white">
+      <section
+        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
+      >
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,12 +131,9 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
               Contact MN Travels
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-              Get in touch with the MN Travels team to discuss your corporate transportation needs and get a customized solution tailored to your business requirements
-            </p>
           </motion.div>
         </div>
       </section>
@@ -163,25 +163,26 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-200"
-            >
-              <div className="mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-navy mb-2">Send Us a Message</h2>
-                <p className="text-gray-600 text-sm md:text-base">Fill out the form and we'll get back to you</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
+            {/* Left Column: Contact Form + Our Team as separate cards */}
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-5 md:p-6 shadow-md border border-gray-200"
+              >
+              <div className="mb-4 md:mb-5">
+                <h2 className="text-xl md:text-2xl font-bold text-navy mb-1">Send Us a Message</h2>
+                <p className="text-gray-600 text-xs md:text-sm">Share a few details and our team will get back to you shortly.</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                    <label htmlFor="name" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                       Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -191,13 +192,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-sm md:text-base"
+                      className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-xs md:text-sm"
                       placeholder="Your full name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                    <label htmlFor="email" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                       Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -207,15 +208,15 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-sm md:text-base"
+                      className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-xs md:text-sm"
                       placeholder="your.email@company.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                    <label htmlFor="phone" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                       Phone <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -225,13 +226,13 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-sm md:text-base"
+                      className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-xs md:text-sm"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="companyName" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                    <label htmlFor="companyName" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                       Company Name
                     </label>
                     <input
@@ -240,14 +241,14 @@ const Contact = () => {
                       name="companyName"
                       value={formData.companyName}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-sm md:text-base"
-                      placeholder="Your company name"
+                      className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-xs md:text-sm"
+                      placeholder="Company (optional)"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="requirement" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                  <label htmlFor="requirement" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                     Requirement <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -256,15 +257,15 @@ const Contact = () => {
                     value={formData.requirement}
                     onChange={handleChange}
                     required
-                    rows="4"
-                    className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all resize-none text-sm md:text-base"
+                    rows="3"
+                    className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all resize-none text-xs md:text-sm"
                     placeholder="Tell us about your transportation needs..."
                   ></textarea>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <label htmlFor="date" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                    <label htmlFor="date" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                       Preferred Date
                     </label>
                     <input
@@ -273,12 +274,12 @@ const Contact = () => {
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-sm md:text-base"
+                      className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-xs md:text-sm"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="time" className="block text-gray-700 font-semibold mb-1.5 text-sm md:text-base">
+                    <label htmlFor="time" className="block text-gray-700 font-semibold mb-1 text-xs md:text-sm">
                       Preferred Time
                     </label>
                     <input
@@ -287,7 +288,7 @@ const Contact = () => {
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-sm md:text-base"
+                      className="w-full px-3.5 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue transition-all text-xs md:text-sm"
                     />
                   </div>
                 </div>
@@ -296,7 +297,7 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-lg flex items-start gap-3 ${
+                    className={`p-3.5 rounded-lg flex items-start gap-3 ${
                       status.type === 'success'
                         ? 'bg-green-50 border border-green-200 text-green-800'
                         : 'bg-red-50 border border-red-200 text-red-800'
@@ -307,14 +308,14 @@ const Contact = () => {
                     ) : (
                       <AlertCircle className="flex-shrink-0 mt-0.5" size={20} />
                     )}
-                    <span className="font-semibold text-sm">{status.message}</span>
+                    <span className="font-semibold text-xs md:text-sm">{status.message}</span>
                   </motion.div>
                 )}
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full px-6 py-3 md:py-4 bg-royal-blue text-white rounded-lg font-semibold hover:bg-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-md text-sm md:text-base"
+                  className="w-full px-5 py-2.5 md:py-3 bg-royal-blue text-white rounded-lg font-semibold hover:bg-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-md text-sm"
                 >
                   {loading ? (
                     <>
@@ -330,6 +331,55 @@ const Contact = () => {
                 </button>
               </form>
             </motion.div>
+
+              {/* Our Team - separate block under the form */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-5 md:p-6 shadow-md border border-gray-200"
+              >
+                <h3 className="text-lg md:text-xl font-bold text-navy mb-3">Our Team</h3>
+                <div className="space-y-4">
+                  {teamContacts.map((member, index) => (
+                    <div key={index} className="pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+                      <h4 className="font-bold text-navy mb-1">{member.name}</h4>
+                      <p className="text-sm text-gray-600 mb-3">{member.designation}</p>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <Phone className="text-royal-blue flex-shrink-0 mt-0.5" size={16} />
+                          <div className="flex flex-col gap-1">
+                            {member.phone.map((phone, idx) => (
+                              <a
+                                key={idx}
+                                href={`tel:${phone.replace(/\s/g, '')}`}
+                                className="text-sm text-gray-700 hover:text-royal-blue hover:underline"
+                              >
+                                {phone}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Mail className="text-royal-blue flex-shrink-0 mt-0.5" size={16} />
+                          <div className="flex flex-col gap-1">
+                            {member.email.map((email, idx) => (
+                              <a
+                                key={idx}
+                                href={`mailto:${email}`}
+                                className="text-sm text-gray-700 hover:text-royal-blue hover:underline"
+                              >
+                                {email}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
 
             {/* Contact Info */}
             <motion.div
@@ -381,69 +431,6 @@ const Contact = () => {
                     </div>
                   </motion.div>
                 ))}
-              </div>
-
-              {/* Team Contacts */}
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200">
-                <h3 className="text-xl font-bold text-navy mb-4">Our Team</h3>
-                <div className="space-y-4">
-                  {teamContacts.map((member, index) => (
-                    <div key={index} className="pb-4 border-b border-gray-100 last:border-0 last:pb-0">
-                      <h4 className="font-bold text-navy mb-1">{member.name}</h4>
-                      <p className="text-sm text-gray-600 mb-3">{member.designation}</p>
-                      <div className="space-y-2">
-                        <div className="flex items-start gap-2">
-                          <Phone className="text-royal-blue flex-shrink-0 mt-0.5" size={16} />
-                          <div className="flex flex-col gap-1">
-                            {member.phone.map((phone, idx) => (
-                              <a
-                                key={idx}
-                                href={`tel:${phone.replace(/\s/g, '')}`}
-                                className="text-sm text-gray-700 hover:text-royal-blue hover:underline"
-                              >
-                                {phone}
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Mail className="text-royal-blue flex-shrink-0 mt-0.5" size={16} />
-                          <div className="flex flex-col gap-1">
-                            {member.email.map((email, idx) => (
-                              <a
-                                key={idx}
-                                href={`mailto:${email}`}
-                                className="text-sm text-gray-700 hover:text-royal-blue hover:underline"
-                              >
-                                {email}
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <h3 className="text-xl font-bold text-navy mb-4">Why Choose Us?</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { icon: Shield, text: 'Fully Insured', color: 'text-blue-600' },
-                    { icon: Clock, text: '24/7 Support', color: 'text-green-600' },
-                    { icon: Award, text: 'Award Winning', color: 'text-purple-600' },
-                    { icon: Users, text: '500+ Clients', color: 'text-orange-600' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <div className="p-1.5 bg-gray-100 rounded-lg">
-                        <item.icon className={item.color} size={18} />
-                      </div>
-                      <span className="font-medium text-gray-700 text-sm">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
             </motion.div>
           </div>

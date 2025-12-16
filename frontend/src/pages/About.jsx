@@ -34,17 +34,17 @@ const About = () => {
 
   const milestones = [
     { year: '2009', title: 'MN Travels Founded', description: 'Started with a vision to revolutionize corporate transportation in India, focusing on MNCs and IT companies' },
-    { year: '2012', title: '100+ Corporate Clients', description: 'Reached milestone of serving 100+ corporate clients including major IT companies in NCR region' },
-    { year: '2015', title: 'Fleet Expansion', description: 'Expanded MN Travels fleet to 500+ vehicles including Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), and all types of premium & luxurious cars' },
-    { year: '2018', title: 'Technology Integration', description: 'MN Travels launched GPS tracking and real-time monitoring systems for enhanced service delivery' },
-    { year: '2021', title: '500+ Clients Milestone', description: 'MN Travels achieved milestone of serving 500+ corporate clients across India' },
-    { year: '2024', title: 'Industry Leader', description: 'MN Travels recognized as leading corporate transportation provider trusted by Fortune 500 companies' },
+    { year: '2012', title: 'Key Corporate Partnerships', description: 'Began serving leading IT and corporate clients in the NCR region' },
+    { year: '2015', title: 'Fleet Expansion', description: 'Expanded the MN Travels fleet with a wider mix of Sedans, SUVs, Tempo Traveller, Urbania and Mini Buses for corporate clients' },
+    { year: '2018', title: 'Technology Integration', description: 'Launched GPS tracking and real-time monitoring systems for enhanced service delivery' },
+    { year: '2021', title: 'Pan‑India Operations', description: 'Extended services to multiple cities across India to support growing client needs' },
+    { year: '2024', title: 'Industry Recognition', description: 'Recognized as a trusted corporate transportation partner for leading enterprises' },
   ];
 
   const stats = [
     { number: '20+', label: 'Years Experience', icon: TrendingUp, color: 'from-blue-500 to-cyan-500' },
     { number: '500+', label: 'Corporate Clients', icon: Building2, color: 'from-purple-500 to-pink-500' },
-    { number: '1000+', label: 'Vehicles', icon: Users, color: 'from-green-500 to-emerald-500' },
+    { number: 'Pan‑India', label: 'Service Presence', icon: Users, color: 'from-green-500 to-emerald-500' },
     { number: '98%', label: 'Satisfaction Rate', icon: Star, color: 'from-orange-500 to-amber-500' },
   ];
 
@@ -65,7 +65,10 @@ const About = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-navy to-royal-blue text-white">
+      <section
+        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
+      >
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -73,12 +76,9 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
               About MN Travels
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-              Your trusted partner in corporate transportation. We've been serving businesses with excellence, reliability, and innovation for over 20 years.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -156,11 +156,11 @@ const About = () => {
               </div>
               
               {/* Content */}
-              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-5 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4 leading-snug">
                 Our Mission
               </h3>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
-                At MN Travels, our mission is to provide reliable, safe, and premium corporate transportation services that enable businesses to focus on their core operations. We handle their mobility needs with excellence, innovation, and unwavering commitment to quality, ensuring every journey with MN Travels is comfortable, punctual, and safe.
+                Our mission at MN Travels is to make everyday corporate travel simple, safe and on time. We focus on reliable operations so your teams can move smoothly and your business never slows down.
               </p>
               
               {/* Decorative Element */}
@@ -187,11 +187,11 @@ const About = () => {
               </div>
               
               {/* Content */}
-              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-5 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4 leading-snug">
                 Our Vision
               </h3>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
-                MN Travels envisions becoming the leading corporate transportation partner in India, recognized for our commitment to safety, punctuality, customer satisfaction, and continuous innovation. We aim to set new standards in the corporate transportation industry while expanding our reach to serve more businesses across the country.
+                Our vision is to be the first choice for corporate transportation in India. We want every ride with MN Travels to feel consistent, safe and effortless for both employees and employers.
               </p>
               
               {/* Decorative Element */}
@@ -256,7 +256,7 @@ const About = () => {
       </section>
 
       {/* Milestones & Achievements */}
-      <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-br from-purple-50/40 via-pink-50/30 to-orange-50/20">
+      <section className="py-20 md:py-24 relative overflow-hidden bg-gradient-to-br from-purple-50/40 via-pink-50/30 to-orange-50/20">
         {/* Gradient Overlays for Depth */}
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-purple-400/10 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-orange-400/10 to-transparent"></div>
@@ -325,6 +325,109 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founders & Management */}
+      <section className="py-16 md:py-20 bg-white border-t border-b border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-4">
+              <Users className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">
+                Founders & Management
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+              Leadership with Deep Transportation Expertise
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              MN Travels is led by professionals who have spent their careers in public and private transportation, managing large‑scale mobility programs in both international and Indian markets. Their collective experience shapes the way we design, operate, and scale solutions for our clients.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-navy mb-2">
+                Proven Industry Background
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                The founding team brings extensive experience from both international and local markets, with a strong track record in public and private transportation. Their exposure to diverse operating environments enables MN Travels to deliver robust, practical, and scalable mobility solutions.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-navy mb-2">
+                Strong Business & Operational Leadership
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Collectively, the leadership team has over two decades of experience steering P&amp;L, strategy, operations, sales, technology, and fleet management. This multidisciplinary expertise helps MN Travels balance customer experience, financial performance, and operational discipline.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-navy mb-2">
+                Startup & Scale‑Up Experience
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Members of the core team have played key roles in successfully building and scaling transportation startups, including private mobility platforms in GCC markets. They have managed pan‑India operations, scaled fleets and resources, and consistently delivered strong revenue and healthy margins.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-navy mb-2">
+                Deep Multi‑Modal Knowledge
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                With a strong understanding of multi‑modal transportation and integration with existing public and private networks, MN Travels is able to design solutions that fit seamlessly into complex mobility ecosystems and client infrastructures.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+              className="bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-navy mb-2">
+                Experienced Core Team
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                The extended core team at MN Travels represents several decades of combined experience in transportation and mobility. This depth of knowledge allows us to anticipate challenges, respond quickly to changing requirements, and support clients across a wide range of industries.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,136 +1,131 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { getVehicles } from '../utils/api';
 import { Car, Users, CheckCircle, ArrowRight, Shield, Zap, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Fleet = () => {
-  const [vehicles, setVehicles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [selectedType, setSelectedType] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    const fetchVehicles = async () => {
-      try {
-        setLoading(true);
-        const response = await getVehicles();
-        setVehicles(response.data || []);
-      } catch (err) {
-        console.error('Error fetching vehicles:', err);
-        setError('Failed to load vehicles');
-        // Set default vehicles if API fails
-        setVehicles([
-          {
-            _id: '1',
-            name: '04 Seater Sedan',
-            type: 'sedan',
-            capacity: '4',
-            description: 'Comfortable sedan perfect for executive travel with premium interiors and advanced safety features',
-            features: ['AC', 'GPS Navigation', 'Premium Interior', 'Leather Seats', 'Entertainment System'],
-            isAvailable: true,
-            pricePerKm: 12,
-          },
-          {
-            _id: '2',
-            name: '07 Seater Innova',
-            type: 'suv',
-            capacity: '7',
-            description: 'Spacious SUV ideal for small groups with comfortable seating and ample luggage space',
-            features: ['AC', 'GPS Tracking', 'Comfortable Seating', 'Luggage Space', 'Rear AC'],
-            isAvailable: true,
-            pricePerKm: 15,
-          },
-          {
-            _id: '3',
-            name: '13/17 Seater Tempo Traveller',
-            type: 'tempo',
-            capacity: '13-17',
-            description: 'Perfect for team outings and group travel with spacious interiors and comfortable seating',
-            features: ['AC', 'Spacious Interior', 'Comfortable Seats', 'Luggage Rack', 'Music System'],
-            isAvailable: true,
-            pricePerKm: 18,
-          },
-          {
-            _id: '4',
-            name: '20 Seater Urbania',
-            type: 'urbania',
-            capacity: '20',
-            description: 'Premium Urbania with luxurious interiors, perfect for corporate group travel with enhanced comfort',
-            features: ['AC', 'Premium Seating', 'Spacious Interior', 'Entertainment System', 'USB Charging'],
-            isAvailable: true,
-            pricePerKm: 20,
-          },
-          {
-            _id: '5',
-            name: '25 Seater Mini Bus',
-            type: 'minibus',
-            capacity: '25',
-            description: 'Ideal for employee transportation with comfortable seats and modern amenities',
-            features: ['AC', 'Comfortable Seats', 'Luggage Space', 'Reading Lights', 'USB Charging'],
-            isAvailable: true,
-            pricePerKm: 22,
-          },
-          {
-            _id: '6',
-            name: '30 Seater Mini Bus',
-            type: 'minibus',
-            capacity: '30',
-            description: 'Perfect for large group transportation with premium seating and entertainment options',
-            features: ['AC', 'Spacious', 'Safe Travel', 'Entertainment', 'WiFi Ready'],
-            isAvailable: true,
-            pricePerKm: 24,
-          },
-          {
-            _id: '7',
-            name: '40 Seater Mini Bus',
-            type: 'minibus',
-            capacity: '40',
-            description: 'Large capacity mini bus for corporate events with premium amenities and comfort features',
-            features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points'],
-            isAvailable: true,
-            pricePerKm: 26,
-          },
-          {
-            _id: '8',
-            name: '50 Seater Mini Bus',
-            type: 'minibus',
-            capacity: '50',
-            description: 'Maximum capacity mini bus for large corporate events with all premium features',
-            features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points', 'GPS Tracking'],
-            isAvailable: true,
-            pricePerKm: 28,
-          },
-          {
-            _id: '9',
-            name: 'Premium Sedan',
-            type: 'premium',
-            capacity: '4',
-            description: 'Premium sedan with top-tier features, perfect for VIP corporate travel and executive meetings',
-            features: ['Premium AC', 'Advanced GPS', 'Leather Interior', 'Premium Sound System', 'Sunroof'],
-            isAvailable: true,
-            pricePerKm: 25,
-          },
-          {
-            _id: '10',
-            name: 'Luxury Sedan',
-            type: 'luxury',
-            capacity: '4',
-            description: 'Ultra-luxury sedan with world-class amenities, perfect for high-profile corporate clients',
-            features: ['Climate Control', 'Premium Leather', 'Massage Seats', 'Premium Audio', 'Chauffeur Service'],
-            isAvailable: true,
-            pricePerKm: 35,
-          },
-        ]);
-      } finally {
-        setLoading(false);
-      }
+  const getVehicleImage = (name) => {
+    const imageMap = {
+      '04 Seater Sedan': '/images/04 Seater Sedan.jpg',
+      '07 Seater Innova': '/images/07 Seater Innova.jpg',
+      '13/17 Seater Tempo Traveller': '/images/13,17 Seater Tempo Traveller.jpg',
+      '20 Seater Urbania': '/images/20 Seater Urbania.jpg',
+      '25 Seater Mini Bus': '/images/25 Seater Mini Bus.jpg',
+      '30 Seater Mini Bus': '/images/30 Seater Mini Bus.jpg',
+      '40 Seater Mini Bus': '/images/40 Seater Mini Bus.jpg',
+      '50 Seater Mini Bus': '/images/50 Seater Mini Bus.jpg',
+      'Premium Sedan': '/images/Premium Sedan.jpg',
+      'Luxury Sedan': '/images/Luxury Sedan.jpg',
     };
+    return imageMap[name] || null;
+  };
 
-    fetchVehicles();
-  }, []);
+  const vehicles = [
+    {
+      _id: '1',
+      name: '04 Seater Sedan',
+      type: 'sedan',
+      capacity: '4',
+      description: 'Comfortable sedan perfect for executive travel with premium interiors and advanced safety features',
+      features: ['AC', 'GPS Navigation', 'Premium Interior', 'Leather Seats', 'Entertainment System'],
+      isAvailable: true,
+      pricePerKm: 12,
+    },
+    {
+      _id: '2',
+      name: '07 Seater Innova',
+      type: 'suv',
+      capacity: '7',
+      description: 'Spacious SUV ideal for small groups with comfortable seating and ample luggage space',
+      features: ['AC', 'GPS Tracking', 'Comfortable Seating', 'Luggage Space', 'Rear AC'],
+      isAvailable: true,
+      pricePerKm: 15,
+    },
+    {
+      _id: '3',
+      name: '13/17 Seater Tempo Traveller',
+      type: 'tempo',
+      capacity: '13-17',
+      description: 'Perfect for team outings and group travel with spacious interiors and comfortable seating',
+      features: ['AC', 'Spacious Interior', 'Comfortable Seats', 'Luggage Rack', 'Music System'],
+      isAvailable: true,
+      pricePerKm: 18,
+    },
+    {
+      _id: '4',
+      name: '20 Seater Urbania',
+      type: 'urbania',
+      capacity: '20',
+      description: 'Premium Urbania with luxurious interiors, perfect for corporate group travel with enhanced comfort',
+      features: ['AC', 'Premium Seating', 'Spacious Interior', 'Entertainment System', 'USB Charging'],
+      isAvailable: true,
+      pricePerKm: 20,
+    },
+    {
+      _id: '5',
+      name: '25 Seater Mini Bus',
+      type: 'minibus',
+      capacity: '25',
+      description: 'Ideal for employee transportation with comfortable seats and modern amenities',
+      features: ['AC', 'Comfortable Seats', 'Luggage Space', 'Reading Lights', 'USB Charging'],
+      isAvailable: true,
+      pricePerKm: 22,
+    },
+    {
+      _id: '6',
+      name: '30 Seater Mini Bus',
+      type: 'minibus',
+      capacity: '30',
+      description: 'Perfect for large group transportation with premium seating and entertainment options',
+      features: ['AC', 'Spacious', 'Safe Travel', 'Entertainment', 'WiFi Ready'],
+      isAvailable: true,
+      pricePerKm: 24,
+    },
+    {
+      _id: '7',
+      name: '40 Seater Mini Bus',
+      type: 'minibus',
+      capacity: '40',
+      description: 'Large capacity mini bus for corporate events with premium amenities and comfort features',
+      features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points'],
+      isAvailable: true,
+      pricePerKm: 26,
+    },
+    {
+      _id: '8',
+      name: '50 Seater Mini Bus',
+      type: 'minibus',
+      capacity: '50',
+      description: 'Maximum capacity mini bus for large corporate events with all premium features',
+      features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points', 'GPS Tracking'],
+      isAvailable: true,
+      pricePerKm: 28,
+    },
+    {
+      _id: '9',
+      name: 'Premium Sedan',
+      type: 'premium',
+      capacity: '4',
+      description: 'Premium sedan with top-tier features, perfect for VIP corporate travel and executive meetings',
+      features: ['Premium AC', 'Advanced GPS', 'Leather Interior', 'Premium Sound System', 'Sunroof'],
+      isAvailable: true,
+      pricePerKm: 25,
+    },
+    {
+      _id: '10',
+      name: 'Luxury Sedan',
+      type: 'luxury',
+      capacity: '4',
+      description: 'Ultra-luxury sedan with world-class amenities, perfect for high-profile corporate clients',
+      features: ['Climate Control', 'Premium Leather', 'Massage Seats', 'Premium Audio', 'Chauffeur Service'],
+      isAvailable: true,
+      pricePerKm: 35,
+    },
+  ];
 
   const getVehicleIcon = (type) => {
     switch (type) {
@@ -175,14 +170,14 @@ const Fleet = () => {
   };
 
   const vehicleTypes = [
-    { value: 'all', label: 'All Vehicles', icon: Car, count: vehicles.length },
-    { value: 'sedan', label: 'Sedans', icon: Car, count: vehicles.filter(v => v.type === 'sedan').length },
-    { value: 'suv', label: 'SUVs', icon: Car, count: vehicles.filter(v => v.type === 'suv').length },
-    { value: 'tempo', label: 'Tempo Traveller', icon: Car, count: vehicles.filter(v => v.type === 'tempo').length },
-    { value: 'urbania', label: 'Urbania', icon: Car, count: vehicles.filter(v => v.type === 'urbania').length },
-    { value: 'minibus', label: 'Mini Bus (20-50 Seater)', icon: Car, count: vehicles.filter(v => v.type === 'minibus').length },
-    { value: 'premium', label: 'Premium Cars', icon: Car, count: vehicles.filter(v => v.type === 'premium').length },
-    { value: 'luxury', label: 'Luxury Cars', icon: Car, count: vehicles.filter(v => v.type === 'luxury').length },
+    { value: 'all', label: 'All Vehicles', icon: Car },
+    { value: 'sedan', label: 'Sedans', icon: Car },
+    { value: 'suv', label: 'SUVs', icon: Car },
+    { value: 'tempo', label: 'Tempo Traveller', icon: Car },
+    { value: 'urbania', label: 'Urbania', icon: Car },
+    { value: 'minibus', label: 'Mini Bus (20-50 Seater)', icon: Car },
+    { value: 'premium', label: 'Premium Cars', icon: Car },
+    { value: 'luxury', label: 'Luxury Cars', icon: Car },
   ];
 
   const filteredVehicles = vehicles.filter(vehicle => {
@@ -193,10 +188,10 @@ const Fleet = () => {
   });
 
   const stats = [
-    { number: vehicles.length, label: 'Total Vehicles', icon: Car, color: 'from-blue-500 to-cyan-500' },
-    { number: vehicles.filter(v => v.isAvailable).length, label: 'Available Now', icon: CheckCircle, color: 'from-green-500 to-emerald-500' },
+    { number: 'Premium', label: 'Vehicle Quality', icon: Car, color: 'from-blue-500 to-cyan-500' },
     { number: '100%', label: 'Maintained', icon: Shield, color: 'from-purple-500 to-pink-500' },
     { number: '24/7', label: 'Support', icon: Zap, color: 'from-orange-500 to-amber-500' },
+    { number: 'Pan‑India', label: 'Service Reach', icon: Users, color: 'from-green-500 to-emerald-500' },
   ];
 
   return (
@@ -207,7 +202,10 @@ const Fleet = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-navy to-royal-blue text-white">
+      <section
+        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
+      >
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -215,12 +213,9 @@ const Fleet = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
               Premium Vehicle Fleet
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-              A diverse range of well-maintained, premium vehicles to meet all your corporate transportation needs
-            </p>
           </motion.div>
         </div>
       </section>
@@ -256,7 +251,7 @@ const Fleet = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Vehicle Type Filters */}
-            <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
               {vehicleTypes.map((type) => (
                 <button
                   key={type.value}
@@ -270,13 +265,6 @@ const Fleet = () => {
                   <div className="flex items-center gap-2">
                     <type.icon size={16} />
                     <span>{type.label}</span>
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      selectedType === type.value
-                        ? 'bg-white/20 text-white'
-                        : 'bg-gray-100 text-gray-600'
-                    }`}>
-                      {type.count}
-                    </span>
                   </div>
                 </button>
               ))}
@@ -300,23 +288,7 @@ const Fleet = () => {
       {/* Fleet Grid */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          {loading ? (
-            <div className="text-center py-20">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="inline-block w-12 h-12 border-4 border-royal-blue border-t-transparent rounded-full mb-4"
-              ></motion.div>
-              <p className="text-lg text-gray-600">Loading vehicles...</p>
-            </div>
-          ) : error && vehicles.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="inline-flex p-3 bg-red-50 rounded-lg mb-4">
-                <span className="text-red-600 text-xl">⚠️</span>
-              </div>
-              <p className="text-lg text-red-600 font-semibold">{error}</p>
-            </div>
-          ) : filteredVehicles.length === 0 ? (
+          {filteredVehicles.length === 0 ? (
             <div className="text-center py-20">
               <div className="inline-flex p-3 bg-gray-100 rounded-lg mb-4">
                 <Search className="text-gray-400" size={24} />
@@ -339,9 +311,19 @@ const Fleet = () => {
                     transition={{ delay: index * 0.1 }}
                     className="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden border border-gray-200 transition-all"
                   >
-                    {/* Vehicle Icon Section */}
-                    <div className={`bg-gradient-to-br ${vehicleColor} h-48 flex items-center justify-center`}>
-                      <VehicleIcon className="text-white" size={64} />
+                    {/* Vehicle Image Section */}
+                    <div className="relative h-48 bg-gray-200 overflow-hidden">
+                      {getVehicleImage(vehicle.name) ? (
+                        <img
+                          src={getVehicleImage(vehicle.name)}
+                          alt={vehicle.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className={`bg-gradient-to-br ${vehicleColor} w-full h-full flex items-center justify-center`}>
+                          <VehicleIcon className="text-white" size={64} />
+                        </div>
+                      )}
                       
                       {/* Availability Badge */}
                       {vehicle.isAvailable && (

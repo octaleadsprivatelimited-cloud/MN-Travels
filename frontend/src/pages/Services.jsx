@@ -108,7 +108,10 @@ const Services = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-navy to-royal-blue text-white">
+      <section
+        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
+      >
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,12 +119,9 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
               MN Travels Transportation Solutions
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-              Comprehensive corporate transportation services by MN Travels, designed to meet your business needs with reliability, safety, and excellence. Trusted by 500+ corporate clients across India.
-            </p>
           </motion.div>
         </div>
       </section>
