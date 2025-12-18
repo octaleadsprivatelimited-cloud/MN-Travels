@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, Clock, Shield, Award, TrendingUp, Car, Plane, Building2, Route, Star, Zap, Globe, BarChart3, Sparkles } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
-import PartnerLogos from '../components/PartnerLogos';
 
 const Home = () => {
   const { scrollY } = useScroll();
@@ -55,17 +54,17 @@ const Home = () => {
   ];
 
   const highlights = [
-    { icon: Users, text: 'Trusted by MNCs & IT Companies', number: '500+', subtext: 'Corporate Clients', color: 'from-blue-500 to-cyan-500' },
+    { icon: Users, text: 'Ready to Serve MNCs & IT Companies', number: 'New', subtext: 'Corporate Partner', color: 'from-blue-500 to-cyan-500' },
     { icon: Clock, text: '24/7 Corporate Transportation', number: '24/7', subtext: 'Always Available', color: 'from-purple-500 to-pink-500' },
     { icon: Shield, text: 'Safety First Approach', number: '100%', subtext: 'Insured Fleet', color: 'from-green-500 to-emerald-500' },
     { icon: Award, text: 'Premium Service Quality', number: '98%', subtext: 'Satisfaction Rate', color: 'from-orange-500 to-amber-500' },
   ];
 
   const stats = [
-    { number: '500+', label: 'Corporate Clients', icon: Building2, color: 'from-blue-500 to-cyan-500' },
-    { number: '1000+', label: 'Vehicles in Fleet', icon: Car, color: 'from-purple-500 to-pink-500' },
-    { number: '50K+', label: 'Daily Commuters', icon: Users, color: 'from-green-500 to-emerald-500' },
-    { number: '20+', label: 'Years Experience', icon: TrendingUp, color: 'from-orange-500 to-amber-500' },
+    { number: 'Ready', label: 'To Serve You', icon: Building2, color: 'from-blue-500 to-cyan-500' },
+    { number: 'Premium', label: 'Vehicle Fleet', icon: Car, color: 'from-purple-500 to-pink-500' },
+    { number: '24/7', label: 'Service Available', icon: Users, color: 'from-green-500 to-emerald-500' },
+    { number: '20+', label: 'Years Founder Experience', icon: TrendingUp, color: 'from-orange-500 to-amber-500' },
   ];
 
 
@@ -129,16 +128,16 @@ const Home = () => {
               {/* Stats Section */}
               <div className="flex flex-wrap gap-12 md:gap-16 lg:gap-20">
                 <div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">500+</div>
-                  <div className="text-sm text-gray-300">Corporate Clients</div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">Ready</div>
+                  <div className="text-sm text-gray-300">To Serve You</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">50K+</div>
-                  <div className="text-sm text-gray-300">Trips Completed</div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">24/7</div>
+                  <div className="text-sm text-gray-300">Service Available</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">20+</div>
-                  <div className="text-sm text-gray-300">Years Experience</div>
+                  <div className="text-sm text-gray-300">Years Founder Experience</div>
                 </div>
               </div>
             </div>
@@ -180,7 +179,7 @@ const Home = () => {
                 </span>
               </h2>
               <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                For over 20 years, we've been a trusted partner, earning and maintaining the confidence of corporate clients across India. We deliver excellence in every journey.
+                Our founders bring over 20 years of combined experience in corporate transportation. We're a new company with proven expertise, ready to earn your trust and deliver excellence in every journey.
               </p>
             </motion.div>
 
@@ -216,7 +215,7 @@ const Home = () => {
                       
                       {index === 0 && (
                         <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 lg:line-clamp-4">
-                          Serving leading MNCs and IT companies including Infosys, TCS, Wipro, and Accenture. We provide reliable and professional transportation solutions that meet the highest standards of corporate excellence.
+                          Ready to serve leading MNCs and IT companies with reliable and professional transportation solutions that meet the highest standards of corporate excellence.
                         </p>
                       )}
                       {index === 1 && (
@@ -479,25 +478,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trusted By Industry Leaders Section */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Trusted By Industry Leaders
-            </h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Partners who trust us with their transportation needs
-            </p>
-          </motion.div>
-          <PartnerLogos />
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 relative overflow-hidden text-white" style={{

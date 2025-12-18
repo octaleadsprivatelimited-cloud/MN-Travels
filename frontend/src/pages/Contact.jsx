@@ -121,7 +121,7 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section
-        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        className="py-6 md:py-16 bg-cover bg-center bg-no-repeat text-white"
         style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
       >
         <div className="container mx-auto px-4 text-center">
@@ -131,7 +131,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-3xl md:text-5xl font-bold mb-0 md:mb-6 text-white drop-shadow-lg">
               Contact MN Travels
             </h1>
           </motion.div>

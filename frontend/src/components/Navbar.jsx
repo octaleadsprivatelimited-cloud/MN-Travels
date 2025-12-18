@@ -48,31 +48,23 @@ const Navbar = () => {
       <nav
         className={`sticky top-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-navy/95 backdrop-blur-md shadow-lg'
-            : 'bg-navy shadow-md'
+            ? 'bg-white backdrop-blur-md shadow-lg'
+            : 'bg-white shadow-md'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-12 md:h-14">
             {/* Logo */}
             <Link
               to="/"
-              className="flex items-center space-x-3 group"
+              className="flex items-center group"
               onClick={() => setIsOpen(false)}
             >
-              <div className="relative">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-royal-blue to-blue-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                  <span className="text-white font-bold text-lg md:text-xl">M</span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-bold text-white leading-tight">
-                  MN Travels
-                </span>
-                <span className="text-xs text-gray-300 hidden sm:block">
-                  Corporate Travel Partner
-                </span>
-              </div>
+              <img 
+                src="/images/logo-new.png"
+                alt="MN Travels Logo" 
+                className="h-[8.064rem] md:h-[9.408rem] w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -83,8 +75,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`relative px-2 py-2 text-sm font-medium transition-all duration-200 ${
                     isActive(link.path)
-                      ? 'text-white underline decoration-royal-blue decoration-2 underline-offset-4'
-                      : 'text-gray-200 hover:text-white'
+                      ? 'text-royal-blue underline decoration-royal-blue decoration-2 underline-offset-4'
+                      : 'text-navy hover:text-royal-blue'
                   }`}
                 >
                   {link.label}
@@ -97,7 +89,7 @@ const Navbar = () => {
               {/* Phone Number - Desktop */}
               <a
                 href="tel:+919900109686"
-                className="hidden md:flex items-center space-x-2 text-white hover:text-royal-blue transition-colors font-medium text-sm"
+                className="hidden md:flex items-center space-x-2 text-navy hover:text-royal-blue transition-colors font-medium text-sm"
               >
                 <Phone size={18} />
                 <span>+91 99001 09686</span>
@@ -106,14 +98,14 @@ const Navbar = () => {
               {/* Book Now Button - Desktop */}
               <Link
                 to="/contact"
-                className="hidden lg:block px-6 py-2.5 bg-navy hover:bg-navy/90 border border-royal-blue/50 text-white rounded-lg transition-all duration-200 font-semibold text-sm"
+                className="hidden lg:block px-6 py-2.5 bg-royal-blue hover:bg-blue-600 text-white rounded-lg transition-all duration-200 font-semibold text-sm"
               >
                 Book Now
               </Link>
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors z-[10000] relative"
+                className="lg:hidden p-2 text-navy hover:bg-gray-100 rounded-lg transition-colors z-[10000] relative"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle menu"
                 aria-expanded={isOpen}
@@ -149,11 +141,12 @@ const Navbar = () => {
               <div className="flex flex-col h-full">
                 {/* Menu Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-royal-blue to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-lg">M</span>
-                    </div>
-                    <span className="text-lg font-bold text-white">MN Travels</span>
+                  <div className="flex items-center">
+                    <img 
+                      src="/images/logo-new.png"
+                      alt="MN Travels Logo" 
+                      className="h-[8.064rem] w-auto object-contain"
+                    />
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}

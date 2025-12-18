@@ -24,11 +24,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="text-xl font-bold">MN Travels</div>
-              <div className="w-6 h-6 border-2 border-royal-blue rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-royal-blue rounded-full"></div>
-              </div>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/images/footer-logo.png"
+                alt="MN Travels Logo" 
+                className="h-16 md:h-20 w-auto object-contain"
+              />
             </div>
             <p className="text-silver-gray text-sm mb-4">
               Corporate Commute, Simplified. Trusted Travel Partner for MNCs.
@@ -110,7 +111,17 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-royal-blue mt-8 pt-8 text-center text-silver-gray text-sm">
-          <p>&copy; {currentYear} MN Travels. All rights reserved.</p>
+          <p>
+            &copy; {currentYear} MN Travels. All rights reserved. | Developed by{' '}
+            <a 
+              href="https://www.octaleads.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-royal-blue transition-colors font-medium"
+            >
+              Octaleads Private Limited
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -33,17 +33,15 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2009', title: 'MN Travels Founded', description: 'Started with a vision to revolutionize corporate transportation in India, focusing on MNCs and IT companies' },
-    { year: '2012', title: 'Key Corporate Partnerships', description: 'Began serving leading IT and corporate clients in the NCR region' },
-    { year: '2015', title: 'Fleet Expansion', description: 'Expanded the MN Travels fleet with a wider mix of Sedans, SUVs, Tempo Traveller, Urbania and Mini Buses for corporate clients' },
-    { year: '2018', title: 'Technology Integration', description: 'Launched GPS tracking and real-time monitoring systems for enhanced service delivery' },
-    { year: '2021', title: 'Pan‑India Operations', description: 'Extended services to multiple cities across India to support growing client needs' },
-    { year: '2024', title: 'Industry Recognition', description: 'Recognized as a trusted corporate transportation partner for leading enterprises' },
+    { year: '2024', title: 'MN Travels Founded', description: 'Started with a vision to revolutionize corporate transportation in India, bringing together decades of industry expertise to serve MNCs and IT companies' },
+    { year: '2024', title: 'Rapid Growth', description: 'Quickly established a strong presence in the corporate transportation market with a modern fleet and experienced leadership team' },
+    { year: '2024', title: 'Technology Integration', description: 'Launched with GPS tracking and real-time monitoring systems for enhanced service delivery from day one' },
+    { year: '2024', title: 'Ready for Partnerships', description: 'Prepared to build relationships with leading IT and corporate clients, leveraging our founders\' extensive industry experience' },
   ];
 
   const stats = [
-    { number: '20+', label: 'Years Experience', icon: TrendingUp, color: 'from-blue-500 to-cyan-500' },
-    { number: '500+', label: 'Corporate Clients', icon: Building2, color: 'from-purple-500 to-pink-500' },
+    { number: '20+', label: 'Years Founder Experience', icon: TrendingUp, color: 'from-blue-500 to-cyan-500' },
+    { number: 'Ready', label: 'To Serve You', icon: Building2, color: 'from-purple-500 to-pink-500' },
     { number: 'Pan‑India', label: 'Service Presence', icon: Users, color: 'from-green-500 to-emerald-500' },
     { number: '98%', label: 'Satisfaction Rate', icon: Star, color: 'from-orange-500 to-amber-500' },
   ];
@@ -66,7 +64,7 @@ const About = () => {
 
       {/* Hero Section */}
       <section
-        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        className="py-6 md:py-16 bg-cover bg-center bg-no-repeat text-white"
         style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
       >
         <div className="container mx-auto px-4 text-center">
@@ -76,7 +74,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-3xl md:text-5xl font-bold mb-0 md:mb-6 text-white drop-shadow-lg">
               About MN Travels
             </h1>
           </motion.div>
@@ -464,7 +462,7 @@ const About = () => {
               At MN Travels, we understand that corporate transportation is more than just moving people. It's about ensuring safety, maintaining professionalism, and reflecting your business values.
             </p>
             <p className="text-base text-gray-500 max-w-2xl mx-auto">
-              With over 20 years of experience, we've built a reputation for excellence in corporate transportation across India.
+              Our founders bring over 20 years of combined experience in corporate transportation, ensuring we deliver excellence from day one.
             </p>
           </motion.div>
 
@@ -520,7 +518,7 @@ const About = () => {
               Ready to Experience Excellence?
             </h2>
             <p className="text-lg text-gray-200 mb-8 max-w-xl mx-auto">
-              Join hundreds of satisfied corporate clients who trust us with their transportation needs
+              Be among the first to experience our premium corporate transportation services backed by decades of industry expertise
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

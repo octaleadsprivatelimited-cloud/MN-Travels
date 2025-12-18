@@ -21,7 +21,7 @@ const Services = () => {
       ],
       color: 'from-blue-500 via-blue-600 to-cyan-600',
       gradient: 'bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100',
-      stats: { clients: '200+', satisfaction: '98%' },
+      stats: { satisfaction: '98%' },
     },
     {
       icon: Plane,
@@ -38,7 +38,7 @@ const Services = () => {
       ],
       color: 'from-royal-blue via-blue-600 to-cyan-600',
       gradient: 'bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50',
-      stats: { clients: '150+', satisfaction: '99%' },
+      stats: { satisfaction: '99%' },
     },
     {
       icon: Building2,
@@ -55,7 +55,7 @@ const Services = () => {
       ],
       color: 'from-purple-500 via-purple-600 to-pink-600',
       gradient: 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100',
-      stats: { clients: '100+', satisfaction: '97%' },
+      stats: { satisfaction: '97%' },
     },
     {
       icon: Route,
@@ -72,7 +72,7 @@ const Services = () => {
       ],
       color: 'from-green-500 via-emerald-600 to-teal-600',
       gradient: 'bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50',
-      stats: { clients: '180+', satisfaction: '96%' },
+      stats: { satisfaction: '96%' },
     },
     {
       icon: Car,
@@ -89,7 +89,7 @@ const Services = () => {
       ],
       color: 'from-orange-500 via-amber-600 to-yellow-600',
       gradient: 'bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50',
-      stats: { clients: '120+', satisfaction: '99%' },
+      stats: { satisfaction: '99%' },
     },
   ];
 
@@ -109,7 +109,7 @@ const Services = () => {
 
       {/* Hero Section */}
       <section
-        className="py-12 md:py-16 bg-cover bg-center bg-no-repeat text-white"
+        className="py-6 md:py-16 bg-cover bg-center bg-no-repeat text-white"
         style={{ backgroundImage: "url('/images/hero-mn.png (2).png')" }}
       >
         <div className="container mx-auto px-4 text-center">
@@ -119,7 +119,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-3xl md:text-5xl font-bold mb-0 md:mb-6 text-white drop-shadow-lg">
               MN Travels Transportation Solutions
             </h1>
           </motion.div>
@@ -184,10 +184,6 @@ const Services = () => {
                   {/* Stats */}
                   <div className="flex gap-8 py-4">
                     <div>
-                      <div className="text-2xl font-bold text-navy">{service.stats.clients}</div>
-                      <div className="text-sm text-gray-600">Active Clients</div>
-                    </div>
-                    <div>
                       <div className="text-2xl font-bold text-navy">{service.stats.satisfaction}</div>
                       <div className="text-sm text-gray-600">Satisfaction</div>
                     </div>
@@ -237,11 +233,6 @@ const Services = () => {
                     {/* Stats Overlay */}
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="flex justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-navy">{service.stats.clients}</div>
-                          <div className="text-sm text-gray-600">Clients</div>
-                        </div>
-                        <div className="w-px bg-gray-300"></div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-navy">{service.stats.satisfaction}</div>
                           <div className="text-sm text-gray-600">Satisfaction</div>
