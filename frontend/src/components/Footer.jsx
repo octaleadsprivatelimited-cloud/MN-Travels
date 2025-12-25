@@ -1,75 +1,80 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const footerBgImage = '/images/footer-bg.jpeg';
 
   return (
     <footer 
-      className="relative text-white overflow-hidden bg-navy"
-      style={{
-        backgroundImage: `url(${footerBgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
+      className="relative overflow-hidden bg-navy text-white"
     >
-      {/* Dark Overlay for Readability */}
-      <div className="absolute inset-0 bg-navy/50"></div>
-      
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-6 md:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="container mx-auto px-4 py-4 md:py-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center mb-3">
+          <div className="lg:col-span-1">
+            <div className="flex items-start mb-1">
               <img 
-                src="/images/footer-logo.png"
+                src="/images/logo-new.png"
                 alt="MN Travels Logo" 
-                className="h-14 md:h-16 w-auto object-contain"
+                className="h-32 md:h-40 w-auto object-contain"
               />
             </div>
-            <p className="text-silver-gray text-sm mb-2">
-              Corporate Commute, Simplified. Trusted Travel Partner for MNCs.
-            </p>
-            <p className="text-silver-gray text-sm">
-              Premium Transport for Corporate Excellence
-            </p>
+            <div className="mt-3">
+              <p className="text-gray-300 text-xs mb-1.5 leading-tight line-clamp-2">
+                Corporate Commute, Simplified. Trusted Travel Partner for MNCs. Premium Transport for Corporate Excellence.
+              </p>
+              <div className="space-y-1">
+                <div className="flex items-start gap-1.5">
+                  <MapPin size={12} className="mt-0.5 text-royal-blue flex-shrink-0" />
+                  <span className="text-gray-300 text-xs leading-tight">No 171, K No 342/4, 02nd Cross, Vijaya Bank Colony, Basavanapura Main Road, KR Puram, Bangalore - 560036</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Phone size={12} className="text-royal-blue flex-shrink-0" />
+                  <a href="tel:+919900109686" className="text-gray-300 text-xs hover:text-white transition-colors">+91 99001 09686</a>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Mail size={12} className="text-royal-blue flex-shrink-0" />
+                  <a href="mailto:info@mntravels.in" className="text-gray-300 text-xs hover:text-white transition-colors">info@mntravels.in</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-3">Quick Links</h3>
-            <ul className="space-y-1.5 text-silver-gray text-sm">
+            <h3 className="font-bold text-base mb-0 text-white relative inline-block pt-0">
+              Quick Links
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm mt-3">
               <li>
-                <Link to="/" className="hover:text-royal-blue transition-colors">
+                <Link to="/" className="hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-royal-blue transition-colors">
+                <Link to="/about" className="hover:text-white transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-royal-blue transition-colors">
+                <Link to="/services" className="hover:text-white transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/fleet" className="hover:text-royal-blue transition-colors">
+                <Link to="/fleet" className="hover:text-white transition-colors">
                   Fleet
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-royal-blue transition-colors">
+                <Link to="/contact" className="hover:text-white transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <a href="/sitemap.xml" className="hover:text-royal-blue transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="/sitemap.xml" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   Sitemap
                 </a>
               </li>
@@ -78,80 +83,84 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-3">Services</h3>
-            <ul className="space-y-1.5 text-silver-gray text-sm">
+            <h3 className="font-bold text-base mb-0 text-white relative inline-block pt-0">
+              Services
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm mt-3">
               <li>
-                <Link to="/services" className="hover:text-royal-blue transition-colors">
+                <Link to="/services" className="hover:text-white transition-colors">
                   Employee Transportation
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-royal-blue transition-colors">
+                <Link to="/services" className="hover:text-white transition-colors">
                   Airport Pickups / Drops
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-royal-blue transition-colors">
+                <Link to="/services" className="hover:text-white transition-colors">
                   Hotel Adhoc Transport
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-royal-blue transition-colors">
+                <Link to="/services" className="hover:text-white transition-colors">
                   Local & Outstation Trips
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-royal-blue transition-colors">
+                <Link to="/services" className="hover:text-white transition-colors">
                   Premium & Luxury Car Hire
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Stay Updated */}
           <div>
-            <h3 className="font-semibold mb-3">Contact Us</h3>
-            <ul className="space-y-2 text-silver-gray text-sm">
-              <li className="flex items-start space-x-2">
-                <Phone size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
-                <div className="flex flex-col">
-                  <a href="tel:+919900109686" className="hover:text-royal-blue transition-colors">+91 99001 09686</a>
-                  <a href="tel:+919743484699" className="hover:text-royal-blue transition-colors">+91 97434 84699</a>
-                  <a href="tel:+918951635782" className="hover:text-royal-blue transition-colors">+91 89516 35782</a>
-                </div>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Mail size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
-                <div className="flex flex-col">
-                  <a href="mailto:info@mntravels.in" className="hover:text-royal-blue transition-colors">info@mntravels.in</a>
-                  <a href="mailto:prasad@mntravels.in" className="hover:text-royal-blue transition-colors">prasad@mntravels.in</a>
-                  <a href="mailto:nagaveni@mntravels.in" className="hover:text-royal-blue transition-colors">nagaveni@mntravels.in</a>
-                </div>
-              </li>
-              <li className="flex items-start space-x-2">
-                <MapPin size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
-                <span>No 171, K No 342/4, 02nd Cross, Vijaya Bank Colony, Basavanapura Main Road<br />KR Puram, Bangalore - 560036</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Clock size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
-                <span>24/7 Operations</span>
-              </li>
-            </ul>
+            <h3 className="font-bold text-base mb-0 text-white relative inline-block pt-0">
+              Stay Updated
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
+            </h3>
+            <div className="mt-3">
+              <p className="text-gray-300 text-sm mb-3 leading-relaxed">
+                Subscribe to our newsletter for exclusive travel deals, destination guides, and insider tips delivered to your inbox.
+              </p>
+              <form action="https://formspree.io/f/xbdrnzzg" method="POST">
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-royal-blue focus:ring-1 focus:ring-royal-blue"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2.5 bg-royal-blue hover:bg-blue-600 rounded-lg text-white transition-colors flex items-center justify-center"
+                >
+                  <Send size={18} />
+                </button>
+              </div>
+            </form>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-royal-blue mt-6 pt-6 text-center text-silver-gray text-sm">
-          <p>
-            &copy; {currentYear} MN Travels. All rights reserved. | Developed by{' '}
-            <a 
-              href="https://www.octaleads.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white hover:text-royal-blue transition-colors font-medium"
-            >
-              Octaleads Private Limited
-            </a>
-          </p>
+        <div className="border-t border-white/10 mt-4 pt-4">
+          <div className="text-center">
+            <p className="text-gray-300 text-sm">
+              &copy; {currentYear} MN Travels. All Rights Reserved. | Developed by{' '}
+              <a 
+                href="https://www.octaleads.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-royal-blue transition-colors font-semibold"
+              >
+                Octaleads Private Limited
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

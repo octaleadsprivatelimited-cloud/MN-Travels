@@ -108,8 +108,8 @@ const Home = () => {
         }} />
       </Helmet>
 
-      {/* Hero Section - Left Aligned Content with Cars Background */}
-      <section className="relative text-white overflow-hidden min-h-[70vh] flex items-center">
+      {/* Hero Section - Centered Content with Cars Background */}
+      <section className="relative text-white overflow-hidden min-h-[40vh] md:min-h-[50vh] flex items-center">
         {/* Background Image with Cars */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -117,60 +117,62 @@ const Home = () => {
             backgroundImage: `url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
           }}
         >
-          {/* Dark Blue Overlay */}
-          <div className="absolute inset-0 bg-navy/85"></div>
+          {/* Lighter Overlay */}
+          <div className="absolute inset-0 bg-navy/50 md:bg-navy/70"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-20">
           <div className="max-w-6xl">
-            <div className="text-left max-w-3xl">
-              {/* Tagline */}
-              <div className="text-sm font-semibold text-gray-300 mb-6 tracking-wider uppercase">
-                YOUR TRUSTED CORPORATE TRAVEL PARTNER
-              </div>
-
+            {/* Mobile: Centered, Desktop: Left-aligned */}
+            <div className="text-center md:text-left max-w-3xl md:max-w-3xl mx-auto md:mx-0">
               {/* Main Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
                 <span className="text-white">Reliable Transportation Services for </span>
                 <span className="text-royal-blue">
                   Corporates & Travelers
                 </span>
               </h1>
               
-              {/* Description */}
-              <p className="text-lg md:text-xl text-white mb-10 leading-relaxed">
+              {/* Tagline/Subtitle - Only on mobile */}
+              <p className="text-lg md:text-xl text-royal-blue font-semibold mb-6 md:hidden">
+                Expert Corporate Transportation Services
+              </p>
+              
+              {/* Description - Desktop only */}
+              <p className="hidden md:block text-base md:text-lg text-white mb-8 leading-relaxed">
                 Premium travel solutions with a wide fleet from 4 to 50 seater vehicles. Experience safe, comfortable, and punctual transportation across the city and beyond.
               </p>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-16">
+              <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-12 md:mb-16">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-10 py-4 bg-royal-blue hover:bg-blue-600 text-white rounded-lg font-semibold text-lg transition-all"
+                  className="inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 bg-royal-blue hover:bg-blue-600 text-white rounded-lg font-semibold text-base md:text-lg transition-all shadow-lg"
                 >
-                  Book Now <span className="ml-2 text-xl">></span>
+                  Explore Services
+                  <ArrowRight className="ml-2" size={20} />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-10 py-4 bg-navy border-2 border-royal-blue/50 text-white hover:bg-navy/90 rounded-lg font-semibold text-lg transition-all"
+                  className="inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 bg-navy/80 hover:bg-navy/90 border-2 border-white/30 text-white rounded-lg font-semibold text-base md:text-lg transition-all"
                 >
-                  Contact Us
+                  Get a Quote
                 </Link>
               </div>
 
               {/* Stats Section */}
-              <div className="flex flex-wrap gap-12 md:gap-16 lg:gap-20">
+              <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 lg:gap-20">
                 <div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">Ready</div>
-                  <div className="text-sm text-gray-300">To Serve You</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">Ready</div>
+                  <div className="text-xs md:text-sm text-gray-300">To Serve You</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">24/7</div>
-                  <div className="text-sm text-gray-300">Service Available</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">24/7</div>
+                  <div className="text-xs md:text-sm text-gray-300">Service Available</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">20+</div>
-                  <div className="text-sm text-gray-300">Years Founder Experience</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">20+</div>
+                  <div className="text-xs md:text-sm text-gray-300">Years Founder Experience</div>
                 </div>
               </div>
             </div>
@@ -178,6 +180,63 @@ const Home = () => {
         </div>
       </section>
 
+
+      {/* Our Services Section */}
+      <section className="pt-8 md:pt-12 pb-20 md:pb-28 relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, #005bb5 1px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+        
+        {/* Gradient Overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-royal-blue/5 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-royal-blue/5 to-transparent"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-royal-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6"
+            >
+              <Sparkles className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Our Services</span>
+            </motion.div>
+            
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy mb-4 md:mb-6 leading-tight">
+              Comprehensive Transportation
+              <span className="block bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
+                Solutions
+              </span>
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Tailored corporate transportation services designed to meet the unique needs of modern businesses
+            </p>
+          </motion.div>
+
+          {/* Services Grid - 2 columns on mobile, 2 on tablet, 5 on desktop (one row) */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-4 max-w-7xl mx-auto">
+            {services.map((service, index) => (
+              <ServiceCard key={index} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose MN Travels Section */}
       <section className="pt-20 md:pt-28 pb-8 md:pb-12 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
@@ -205,12 +264,6 @@ const Home = () => {
                 <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Why MN Travels?</span>
               </motion.div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-6 leading-tight">
-                The MN Travels
-                <span className="block bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
-                  Difference
-                </span>
-              </h2>
               <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Our founders bring over 20 years of combined experience in corporate transportation. We're a new company with proven expertise, ready to earn your trust and deliver excellence in every journey.
               </p>
@@ -300,63 +353,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Services Section */}
-      <section className="pt-8 md:pt-12 pb-20 md:pb-28 relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #005bb5 1px, transparent 0)`,
-            backgroundSize: '50px 50px'
-          }}></div>
-        </div>
-        
-        {/* Gradient Overlays */}
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-royal-blue/5 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-royal-blue/5 to-transparent"></div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-royal-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6"
-            >
-              <Sparkles className="text-royal-blue" size={16} />
-              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Our Services</span>
-            </motion.div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 md:mb-6 leading-tight">
-              Comprehensive Transportation
-              <span className="block bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
-                Solutions
-              </span>
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Tailored corporate transportation services designed to meet the unique needs of modern businesses
-            </p>
-          </motion.div>
-
-          {/* Services Grid - 2 columns on mobile, 2 on tablet, 5 on desktop (one row) */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-4 max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <ServiceCard key={index} service={service} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="pt-8 md:pt-12 pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50">
         {/* Background Pattern */}
@@ -396,12 +392,6 @@ const Home = () => {
                 <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Testimonials</span>
               </motion.div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 leading-tight">
-                Trusted by Leaders
-                <span className="block text-gray-600 text-2xl md:text-3xl lg:text-4xl font-normal mt-2">
-                  from Various Industries
-                </span>
-              </h2>
               <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Discover why professionals and businesses trust our solutions for their corporate transportation needs.
               </p>
@@ -555,7 +545,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               Ready to Simplify Your Corporate Commute?
             </h2>
             <p className="text-lg text-gray-200 mb-8 max-w-xl mx-auto">

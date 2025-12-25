@@ -167,7 +167,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
               Mission & Vision
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               The principles that guide our commitment to excellence
             </p>
           </motion.div>
@@ -194,7 +194,7 @@ const About = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4 leading-snug">
                 Our Mission
               </h3>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
                 Our mission at MN Travels is to make everyday corporate travel simple, safe and on time. We focus on reliable operations so your teams can move smoothly and your business never slows down.
               </p>
               
@@ -225,7 +225,7 @@ const About = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4 leading-snug">
                 Our Vision
               </h3>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">
                 Our vision is to be the first choice for corporate transportation in India. We want every ride with MN Travels to feel consistent, safe and effortless for both employees and employers.
               </p>
               
@@ -260,7 +260,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Core Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </motion.div>
@@ -281,7 +281,7 @@ const About = () => {
                 <h3 className="text-xl font-bold text-navy mb-3">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-xs">
                   {value.description}
                 </p>
               </motion.div>
@@ -318,7 +318,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4 leading-tight">
               Our Journey of Excellence
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               Key milestones that shaped our growth and success
             </p>
           </motion.div>
@@ -351,7 +351,7 @@ const About = () => {
                   <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-royal-blue transition-colors">
                     {milestone.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {milestone.description}
                   </p>
 
@@ -383,7 +383,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Leadership with Deep Transportation Expertise
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
               MN Travels is led by professionals who have spent their careers in public and private transportation, managing large‑scale mobility programs in both international and Indian markets. Their collective experience shapes the way we design, operate, and scale solutions for our clients.
             </p>
           </motion.div>
@@ -399,7 +399,7 @@ const About = () => {
               <h3 className="text-lg font-semibold text-navy mb-2">
                 Proven Industry Background
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs leading-relaxed">
                 The founding team brings extensive experience from both international and local markets, with a strong track record in public and private transportation. Their exposure to diverse operating environments enables MN Travels to deliver robust, practical, and scalable mobility solutions.
               </p>
             </motion.div>
@@ -414,7 +414,7 @@ const About = () => {
               <h3 className="text-lg font-semibold text-navy mb-2">
                 Strong Business & Operational Leadership
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs leading-relaxed">
                 Collectively, the leadership team has over two decades of experience steering P&amp;L, strategy, operations, sales, technology, and fleet management. This multidisciplinary expertise helps MN Travels balance customer experience, financial performance, and operational discipline.
               </p>
             </motion.div>
@@ -429,7 +429,7 @@ const About = () => {
               <h3 className="text-lg font-semibold text-navy mb-2">
                 Startup & Scale‑Up Experience
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs leading-relaxed">
                 Members of the core team have played key roles in successfully building and scaling transportation startups, including private mobility platforms in GCC markets. They have managed pan‑India operations, scaled fleets and resources, and consistently delivered strong revenue and healthy margins.
               </p>
             </motion.div>
@@ -444,7 +444,7 @@ const About = () => {
               <h3 className="text-lg font-semibold text-navy mb-2">
                 Deep Multi‑Modal Knowledge
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs leading-relaxed">
                 With a strong understanding of multi‑modal transportation and integration with existing public and private networks, MN Travels is able to design solutions that fit seamlessly into complex mobility ecosystems and client infrastructures.
               </p>
             </motion.div>
@@ -459,7 +459,7 @@ const About = () => {
               <h3 className="text-lg font-semibold text-navy mb-2">
                 Experienced Core Team
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs leading-relaxed">
                 The extended core team at MN Travels represents several decades of combined experience in transportation and mobility. This depth of knowledge allows us to anticipate challenges, respond quickly to changing requirements, and support clients across a wide range of industries.
               </p>
             </motion.div>
@@ -495,10 +495,10 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               What We Promise
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
               At MN Travels, we understand that corporate transportation is more than just moving people. It's about ensuring safety, maintaining professionalism, and reflecting your business values.
             </p>
-            <p className="text-base text-gray-500 max-w-2xl mx-auto">
+            <p className="text-sm text-gray-500 max-w-2xl mx-auto">
               Our founders bring over 20 years of combined experience in corporate transportation, ensuring we deliver excellence from day one.
             </p>
           </motion.div>
@@ -521,7 +521,7 @@ const About = () => {
                       <commitment.icon className="text-white" size={24} />
                     </div>
                     <div className="flex-1 pt-1">
-                      <p className="text-gray-700 leading-relaxed font-medium">
+                      <p className="text-gray-700 leading-relaxed font-medium text-sm">
                         {commitment.text}
                       </p>
                     </div>
@@ -554,7 +554,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Experience Excellence?
             </h2>
-            <p className="text-lg text-gray-200 mb-8 max-w-xl mx-auto">
+            <p className="text-base text-gray-200 mb-8 max-w-xl mx-auto">
               Be among the first to experience our premium corporate transportation services backed by decades of industry expertise
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
