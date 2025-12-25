@@ -97,7 +97,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['MN Travels Corporate Office', '123 Business Park, Sector 18', 'Gurgaon, Haryana - 122015'],
+      details: ['MN Travels Corporate Office', 'No 171, K No 342/4, 02nd Cross, Vijaya Bank Colony, Basavanapura Main Road', 'KR Puram, Bangalore - 560036'],
       color: 'from-green-500 to-emerald-500',
       action: null,
     },
@@ -196,10 +196,10 @@ const Contact = () => {
               ],
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Business Park, Sector 18",
-                "addressLocality": "Gurgaon",
-                "addressRegion": "Haryana",
-                "postalCode": "122015",
+                "streetAddress": "No 171, K No 342/4, 02nd Cross, Vijaya Bank Colony, Basavanapura Main Road",
+                "addressLocality": "KR Puram, Bangalore",
+                "addressRegion": "Karnataka",
+                "postalCode": "560036",
                 "addressCountry": "IN"
               }
             }

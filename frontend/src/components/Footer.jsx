@@ -130,7 +130,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
-                <span>123 Business Park, Sector 18<br />Gurgaon, Haryana - 122015</span>
+                <span>No 171, K No 342/4, 02nd Cross, Vijaya Bank Colony, Basavanapura Main Road<br />KR Puram, Bangalore - 560036</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Clock size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
