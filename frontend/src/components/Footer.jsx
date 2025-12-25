@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (section) => {
+    setOpenDropdown(openDropdown === section ? null : section);
+  };
 
   return (
     <footer 
@@ -43,11 +49,19 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-base mb-0 text-white relative inline-block pt-0">
-              Quick Links
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
-            </h3>
-            <ul className="space-y-2 text-gray-300 text-sm mt-3">
+            <button
+              onClick={() => toggleDropdown('quickLinks')}
+              className="md:pointer-events-none w-full md:w-auto flex items-center justify-between md:justify-start font-bold text-base mb-0 text-white relative inline-block pt-0"
+            >
+              <span className="relative">
+                Quick Links
+                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
+              </span>
+              <span className="md:hidden ml-2">
+                {openDropdown === 'quickLinks' ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </span>
+            </button>
+            <ul className={`space-y-2 text-gray-300 text-sm mt-3 ${openDropdown === 'quickLinks' ? 'block' : 'hidden'} md:block`}>
               <li>
                 <Link to="/" className="hover:text-white transition-colors">
                   Home
@@ -83,11 +97,19 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-base mb-0 text-white relative inline-block pt-0">
-              Services
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
-            </h3>
-            <ul className="space-y-2 text-gray-300 text-sm mt-3">
+            <button
+              onClick={() => toggleDropdown('services')}
+              className="md:pointer-events-none w-full md:w-auto flex items-center justify-between md:justify-start font-bold text-base mb-0 text-white relative inline-block pt-0"
+            >
+              <span className="relative">
+                Services
+                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
+              </span>
+              <span className="md:hidden ml-2">
+                {openDropdown === 'services' ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </span>
+            </button>
+            <ul className={`space-y-2 text-gray-300 text-sm mt-3 ${openDropdown === 'services' ? 'block' : 'hidden'} md:block`}>
               <li>
                 <Link to="/services" className="hover:text-white transition-colors">
                   Employee Transportation
@@ -118,11 +140,19 @@ const Footer = () => {
 
           {/* Stay Updated */}
           <div>
-            <h3 className="font-bold text-base mb-0 text-white relative inline-block pt-0">
-              Stay Updated
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
-            </h3>
-            <div className="mt-3">
+            <button
+              onClick={() => toggleDropdown('stayUpdated')}
+              className="md:pointer-events-none w-full md:w-auto flex items-center justify-between md:justify-start font-bold text-base mb-0 text-white relative inline-block pt-0"
+            >
+              <span className="relative">
+                Stay Updated
+                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-royal-blue"></span>
+              </span>
+              <span className="md:hidden ml-2">
+                {openDropdown === 'stayUpdated' ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </span>
+            </button>
+            <div className={`mt-3 ${openDropdown === 'stayUpdated' ? 'block' : 'hidden'} md:block`}>
               <p className="text-gray-300 text-sm mb-3 leading-relaxed">
                 Subscribe to our newsletter for exclusive travel deals, destination guides, and insider tips delivered to your inbox.
               </p>
