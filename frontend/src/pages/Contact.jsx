@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { submitLead } from '../utils/api';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, MessageCircle, ArrowRight, Zap, Shield, Award, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -35,25 +34,45 @@ const Contact = () => {
     setStatus({ type: null, message: '' });
 
     try {
-      await submitLead(formData);
-      setStatus({
-        type: 'success',
-        message: 'Thank you for your enquiry! We will contact you soon.',
+      const response = await fetch('https://formspree.io/f/xbdrnzzg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          companyName: formData.companyName,
+          requirement: formData.requirement,
+          preferredDate: formData.date,
+          preferredTime: formData.time,
+          _subject: 'New Contact Form Submission from MN Travels Website',
+        }),
       });
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        companyName: '',
-        requirement: '',
-        date: '',
-        time: '',
-      });
+
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          message: 'Thank you for your enquiry! We will contact you soon.',
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          companyName: '',
+          requirement: '',
+          date: '',
+          time: '',
+        });
+      } else {
+        throw new Error('Failed to submit form');
+      }
     } catch (error) {
       setStatus({
         type: 'error',
-        message: error.response?.data?.message || 'Failed to submit enquiry. Please try again.',
+        message: 'Failed to submit enquiry. Please try again.',
       });
     } finally {
       setLoading(false);
