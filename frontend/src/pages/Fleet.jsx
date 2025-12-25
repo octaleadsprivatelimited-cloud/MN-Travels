@@ -33,7 +33,6 @@ const Fleet = () => {
       description: 'Comfortable sedan perfect for executive travel with premium interiors and advanced safety features',
       features: ['AC', 'GPS Navigation', 'Premium Interior', 'Leather Seats', 'Entertainment System'],
       isAvailable: true,
-      pricePerKm: 12,
     },
     {
       _id: '2',
@@ -43,7 +42,6 @@ const Fleet = () => {
       description: 'Spacious SUV ideal for small groups with comfortable seating and ample luggage space',
       features: ['AC', 'GPS Tracking', 'Comfortable Seating', 'Luggage Space', 'Rear AC'],
       isAvailable: true,
-      pricePerKm: 15,
     },
     {
       _id: '3',
@@ -53,7 +51,6 @@ const Fleet = () => {
       description: 'Perfect for team outings and group travel with spacious interiors and comfortable seating',
       features: ['AC', 'Spacious Interior', 'Comfortable Seats', 'Luggage Rack', 'Music System'],
       isAvailable: true,
-      pricePerKm: 18,
     },
     {
       _id: '4',
@@ -63,7 +60,6 @@ const Fleet = () => {
       description: 'Premium Urbania with luxurious interiors, perfect for corporate group travel with enhanced comfort',
       features: ['AC', 'Premium Seating', 'Spacious Interior', 'Entertainment System', 'USB Charging'],
       isAvailable: true,
-      pricePerKm: 20,
     },
     {
       _id: '5',
@@ -73,7 +69,6 @@ const Fleet = () => {
       description: 'Ideal for employee transportation with comfortable seats and modern amenities',
       features: ['AC', 'Comfortable Seats', 'Luggage Space', 'Reading Lights', 'USB Charging'],
       isAvailable: true,
-      pricePerKm: 22,
     },
     {
       _id: '6',
@@ -83,7 +78,6 @@ const Fleet = () => {
       description: 'Perfect for large group transportation with premium seating and entertainment options',
       features: ['AC', 'Spacious', 'Safe Travel', 'Entertainment', 'WiFi Ready'],
       isAvailable: true,
-      pricePerKm: 24,
     },
     {
       _id: '7',
@@ -93,7 +87,6 @@ const Fleet = () => {
       description: 'Large capacity mini bus for corporate events with premium amenities and comfort features',
       features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points'],
       isAvailable: true,
-      pricePerKm: 26,
     },
     {
       _id: '8',
@@ -103,7 +96,6 @@ const Fleet = () => {
       description: 'Maximum capacity mini bus for large corporate events with all premium features',
       features: ['AC', 'Premium Seating', 'Entertainment System', 'WiFi', 'Charging Points', 'GPS Tracking'],
       isAvailable: true,
-      pricePerKm: 28,
     },
     {
       _id: '9',
@@ -113,7 +105,6 @@ const Fleet = () => {
       description: 'Premium sedan with top-tier features, perfect for VIP corporate travel and executive meetings',
       features: ['Premium AC', 'Advanced GPS', 'Leather Interior', 'Premium Sound System', 'Sunroof'],
       isAvailable: true,
-      pricePerKm: 25,
     },
     {
       _id: '10',
@@ -123,7 +114,6 @@ const Fleet = () => {
       description: 'Ultra-luxury sedan with world-class amenities, perfect for high-profile corporate clients',
       features: ['Climate Control', 'Premium Leather', 'Massage Seats', 'Premium Audio', 'Chauffeur Service'],
       isAvailable: true,
-      pricePerKm: 35,
     },
   ];
 
@@ -422,16 +412,8 @@ const Fleet = () => {
                         </div>
                       )}
                       
-                      {/* Price and CTA */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                        {vehicle.pricePerKm && (
-                          <div>
-                            <div className="text-xs text-gray-500">Starting from</div>
-                            <div className="text-lg font-bold text-navy">
-                              ₹{vehicle.pricePerKm}/km
-                            </div>
-                          </div>
-                        )}
+                      {/* CTA */}
+                      <div className="flex items-center justify-end pt-4 border-t border-gray-100">
                         <Link
                           to="/contact"
                           className="flex items-center gap-2 px-5 py-2.5 bg-royal-blue text-white rounded-lg font-semibold hover:bg-blue-700 transition-all text-sm"
