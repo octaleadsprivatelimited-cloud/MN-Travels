@@ -63,6 +63,11 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <a href="/sitemap.xml" className="hover:text-royal-blue transition-colors" target="_blank" rel="noopener noreferrer">
+                  Sitemap
+                </a>
+              </li>
             </ul>
           </div>
 

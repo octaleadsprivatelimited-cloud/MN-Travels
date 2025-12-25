@@ -115,8 +115,77 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - MN Travels | Get in Touch</title>
-        <meta name="description" content="Contact MN Travels for corporate transportation services. Submit your enquiry or request a quote for employee transport, airport transfers, and more." />
+        <title>Contact Us - MN Travels | Get in Touch | Phone, Email, Address | Corporate Transportation</title>
+        <meta name="description" content="Contact MN Travels for corporate transportation services. Phone: +91 99001 09686, +91 97434 84699, +91 89516 35782. Email: info@mntravels.in. Submit your enquiry or request a quote for employee transport, airport transfers, hotel transport, and more. 24/7 support available." />
+        <meta name="keywords" content="contact MN Travels, MN Travels phone number, MN Travels email, MN Travels address, corporate transport contact, employee transport contact, airport transfer contact, corporate cab contact, business transport contact, transportation enquiry, corporate travel enquiry, employee commute enquiry, request quote transportation, corporate transport quote, employee transport quote, business travel quote, transportation booking, corporate transport booking, employee transport booking, business travel booking, MN Travels Gurgaon, MN Travels Delhi, MN Travels Bangalore, MN Travels contact details, corporate transportation contact, MNC transport contact, IT company transport contact" />
+        <link rel="canonical" href="https://mntravels.in/contact" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mntravels.in/contact" />
+        <meta property="og:title" content="Contact Us - MN Travels | Get in Touch" />
+        <meta property="og:description" content="Contact MN Travels for corporate transportation services. Submit your enquiry or request a quote for employee transport, airport transfers, and more. 24/7 support available." />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:site_name" content="MN Travels" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://mntravels.in/contact" />
+        <meta name="twitter:title" content="Contact Us - MN Travels" />
+        <meta name="twitter:description" content="Contact MN Travels for corporate transportation services. Submit your enquiry or request a quote for employee transport, airport transfers, and more." />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact MN Travels",
+            "description": "Contact MN Travels for corporate transportation services",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "MN Travels",
+              "url": "https://mntravels.in",
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-99001-09686",
+                  "contactType": "Customer Service",
+                  "areaServed": "IN",
+                  "availableLanguage": ["English", "Hindi"]
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-97434-84699",
+                  "contactType": "Customer Service",
+                  "areaServed": "IN",
+                  "availableLanguage": ["English", "Hindi"]
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-89516-35782",
+                  "contactType": "Customer Service",
+                  "areaServed": "IN",
+                  "availableLanguage": ["English", "Hindi"]
+                },
+                {
+                  "@type": "ContactPoint",
+                  "email": "info@mntravels.in",
+                  "contactType": "Customer Service",
+                  "areaServed": "IN"
+                }
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 Business Park, Sector 18",
+                "addressLocality": "Gurgaon",
+                "addressRegion": "Haryana",
+                "postalCode": "122015",
+                "addressCountry": "IN"
+              }
+            }
+          })
+        }} />
       </Helmet>
 
       {/* Hero Section */}

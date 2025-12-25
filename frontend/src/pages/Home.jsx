@@ -71,8 +71,41 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>MN Travels - Corporate Transportation Services | Trusted by MNCs</title>
-        <meta name="description" content="Premium corporate transportation services. Employee transport, airport transfers, and corporate travel solutions trusted by MNCs and IT companies." />
+        <title>MN Travels - Premium Corporate Transportation Services | Employee Transport, Airport Transfers | Trusted by MNCs & IT Companies</title>
+        <meta name="description" content="MN Travels offers premium corporate transportation services in India. Trusted by MNCs & IT companies for employee transport, airport pickups/drops, hotel adhoc transport, local & outstation trips. Fleet includes Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 seater), Premium & Luxury cars. 24/7 service available." />
+        <meta name="keywords" content="corporate transportation, employee transport, airport transfers, corporate travel, fleet management, MNC transport, employee transportation services, airport pickup drop, corporate car rental, tempo traveller hire, mini bus rental, premium car hire, luxury car rental, corporate travel solutions, employee commute services, business transportation, IT company transport, corporate fleet management, gurgaon transport, delhi transport, bangalore transport, hyderabad transport, pune transport, mumbai transport, corporate cab services, office cab services, employee cab services, corporate bus services, employee bus services, GPS tracking, 24/7 transport services, reliable corporate transport, safe employee transport, professional chauffeur services, corporate event transport, conference transport, hotel transport services, outstation corporate travel, local corporate travel, sedan rental, SUV rental, innova rental, urbania rental, mini bus rental, luxury sedan rental, premium sedan rental, corporate vehicle rental, business travel solutions, employee transportation company, corporate transport provider, MNC transport services, IT company cab services, employee shuttle services, corporate shuttle services, transportation for companies, business travel management, corporate mobility solutions" />
+        <link rel="canonical" href="https://mntravels.in" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mntravels.in" />
+        <meta property="og:title" content="MN Travels - Premium Corporate Transportation Services | Employee Transport, Airport Transfers" />
+        <meta property="og:description" content="Premium corporate transportation services trusted by MNCs & IT companies. Employee transport, airport transfers, hotel adhoc transport, local & outstation trips. Fleet from 4 to 50 seater vehicles. 24/7 service available." />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:site_name" content="MN Travels" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://mntravels.in" />
+        <meta name="twitter:title" content="MN Travels - Premium Corporate Transportation Services" />
+        <meta name="twitter:description" content="Premium corporate transportation services. Employee transport, airport transfers, and corporate travel solutions trusted by MNCs and IT companies." />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "MN Travels",
+            "url": "https://mntravels.in",
+            "description": "Premium corporate transportation services including employee transport, airport transfers, and corporate travel solutions.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://mntravels.in/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }} />
       </Helmet>
 
       {/* Hero Section - Left Aligned Content with Cars Background */}

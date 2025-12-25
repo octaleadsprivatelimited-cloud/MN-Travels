@@ -197,8 +197,67 @@ const Fleet = () => {
   return (
     <>
       <Helmet>
-        <title>Fleet - MN Travels | Our Vehicle Fleet</title>
-        <meta name="description" content="Explore our diverse fleet of vehicles including Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), and all types of premium & luxurious cars." />
+        <title>Vehicle Fleet - Sedans, SUVs, Tempo Traveller, Mini Bus, Premium & Luxury Cars | MN Travels</title>
+        <meta name="description" content="Explore MN Travels' diverse vehicle fleet: 4 Seater Sedan, 7 Seater Innova, 13/17 Seater Tempo Traveller, 20 Seater Urbania, Mini Bus (25-50 Seater), Premium Sedan, Luxury Sedan. All vehicles with AC, GPS tracking, premium interiors. Available for corporate transportation across India." />
+        <meta name="keywords" content="corporate vehicle fleet, sedan rental, SUV rental, tempo traveller hire, urbania rental, mini bus rental, luxury car rental, premium car rental, corporate car rental, employee transport vehicles, corporate bus rental, 4 seater sedan, 7 seater innova, 13 seater tempo, 17 seater tempo, 20 seater urbania, 25 seater bus, 30 seater bus, 40 seater bus, 50 seater bus, premium sedan, luxury sedan, corporate fleet vehicles, business vehicle rental, office vehicle rental, employee cab vehicles, corporate event vehicles, conference transport vehicles, airport transfer vehicles, hotel transport vehicles, GPS tracked vehicles, AC vehicles, premium interior vehicles, comfortable corporate vehicles, safe transport vehicles, professional chauffeur vehicles, reliable corporate vehicles, modern fleet vehicles, well maintained vehicles, insured corporate vehicles" />
+        <link rel="canonical" href="https://mntravels.in/fleet" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mntravels.in/fleet" />
+        <meta property="og:title" content="Vehicle Fleet - Sedans, SUVs, Tempo Traveller, Mini Bus, Premium & Luxury Cars | MN Travels" />
+        <meta property="og:description" content="Explore our diverse fleet: Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), Premium & Luxury cars. All vehicles with AC, GPS tracking, premium interiors." />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:site_name" content="MN Travels" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://mntravels.in/fleet" />
+        <meta name="twitter:title" content="Vehicle Fleet - MN Travels" />
+        <meta name="twitter:description" content="Explore our diverse fleet of vehicles including Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), and all types of premium & luxurious cars." />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "MN Travels Vehicle Fleet",
+            "description": "Complete fleet of corporate transportation vehicles",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "name": "04 Seater Sedan",
+                "description": "Comfortable sedan perfect for executive travel with premium interiors"
+              },
+              {
+                "@type": "Product",
+                "name": "07 Seater Innova",
+                "description": "Spacious SUV ideal for small groups with comfortable seating"
+              },
+              {
+                "@type": "Product",
+                "name": "13/17 Seater Tempo Traveller",
+                "description": "Perfect for team outings and group travel with spacious interiors"
+              },
+              {
+                "@type": "Product",
+                "name": "20 Seater Urbania",
+                "description": "Premium Urbania with luxurious interiors for corporate group travel"
+              },
+              {
+                "@type": "Product",
+                "name": "25-50 Seater Mini Bus",
+                "description": "Large capacity buses for employee transportation and corporate events"
+              },
+              {
+                "@type": "Product",
+                "name": "Premium & Luxury Sedan",
+                "description": "Top-tier vehicles for VIP corporate travel and executive meetings"
+              }
+            ]
+          })
+        }} />
       </Helmet>
 
       {/* Hero Section */}

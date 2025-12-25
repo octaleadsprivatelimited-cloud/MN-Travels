@@ -58,8 +58,45 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - MN Travels | Corporate Transportation Company</title>
-        <meta name="description" content="Learn about MN Travels - our mission, vision, and commitment to providing premium corporate transportation services." />
+        <title>About Us - MN Travels | Corporate Transportation Company | Mission, Vision & Values</title>
+        <meta name="description" content="Learn about MN Travels - a premium corporate transportation company with 20+ years of founder experience. Our mission, vision, and commitment to providing safe, reliable, and professional corporate transportation services across India. Trusted by MNCs and IT companies." />
+        <meta name="keywords" content="about MN Travels, corporate transportation company, employee transport company, corporate travel company, transportation company India, corporate cab company, employee cab company, business transportation company, MNC transport company, IT company transport, corporate fleet company, transportation services company, employee commute company, corporate mobility company, business travel company, professional transportation company, reliable transport company, safe transport company, experienced transport company, trusted transport company, corporate transport provider, employee transport provider, business transport provider, transportation solutions company, corporate travel solutions, employee commute solutions, business mobility solutions" />
+        <link rel="canonical" href="https://mntravels.in/about" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mntravels.in/about" />
+        <meta property="og:title" content="About Us - MN Travels | Corporate Transportation Company" />
+        <meta property="og:description" content="Learn about MN Travels - our mission, vision, and commitment to providing premium corporate transportation services. 20+ years of founder experience." />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:site_name" content="MN Travels" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://mntravels.in/about" />
+        <meta name="twitter:title" content="About Us - MN Travels" />
+        <meta name="twitter:description" content="Learn about MN Travels - our mission, vision, and commitment to providing premium corporate transportation services." />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About MN Travels",
+            "description": "Learn about MN Travels - a premium corporate transportation company with 20+ years of founder experience",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "MN Travels",
+              "foundingDate": "2024",
+              "founder": {
+                "@type": "Person",
+                "name": "Hariprasad M"
+              },
+              "description": "Premium corporate transportation services with 20+ years of founder experience in the industry"
+            }
+          })
+        }} />
       </Helmet>
 
       {/* Hero Section */}

@@ -103,8 +103,89 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Services - MN Travels | Corporate Transportation Solutions</title>
-        <meta name="description" content="Comprehensive corporate transportation services including employee transport, airport transfers, hotel adhoc transport, and premium vehicle hire." />
+        <title>Corporate Transportation Services - Employee Transport, Airport Transfers, Hotel Transport | MN Travels</title>
+        <meta name="description" content="Comprehensive corporate transportation services by MN Travels: Employee transportation, airport pickups/drops, hotel adhoc transport, local & outstation trips, premium vehicle hire. Trusted by MNCs & IT companies. 24/7 service available across India." />
+        <meta name="keywords" content="employee transportation services, airport transfer services, hotel transport services, corporate travel services, employee commute services, airport pickup drop services, corporate cab services, office cab services, employee cab services, business transportation services, corporate event transport, conference transport, outstation corporate travel, local corporate travel, corporate mobility solutions, employee shuttle services, corporate shuttle services, GPS tracking transport, 24/7 transport services, reliable corporate transport, safe employee transport, professional chauffeur services, MNC transport services, IT company transport services, corporate fleet services, business travel management, transportation for companies, employee transport solutions, corporate transport solutions, premium transport services, luxury transport services" />
+        <link rel="canonical" href="https://mntravels.in/services" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mntravels.in/services" />
+        <meta property="og:title" content="Corporate Transportation Services - Employee Transport, Airport Transfers | MN Travels" />
+        <meta property="og:description" content="Comprehensive corporate transportation services: Employee transport, airport transfers, hotel adhoc transport, local & outstation trips. Trusted by MNCs & IT companies." />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:site_name" content="MN Travels" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://mntravels.in/services" />
+        <meta name="twitter:title" content="Corporate Transportation Services - MN Travels" />
+        <meta name="twitter:description" content="Comprehensive corporate transportation services including employee transport, airport transfers, hotel adhoc transport, and premium vehicle hire." />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Corporate Transportation Services",
+            "provider": {
+              "@type": "Organization",
+              "name": "MN Travels",
+              "url": "https://mntravels.in"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Corporate Transportation Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Employee Transportation",
+                    "description": "Reliable daily commute solutions for your workforce with dedicated routes, GPS tracking, and professional drivers"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Airport Pickups and Drops",
+                    "description": "Punctual airport transfers for executives and guests with real-time flight monitoring and meet-and-greet services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Hotel Adhoc Transport",
+                    "description": "On-demand transportation services for hotel guests available 24/7 with quick response times"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Local & Outstation Trips",
+                    "description": "Comfortable travel for business trips, conferences, and corporate events with customized packages"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Premium Vehicle Fleet",
+                    "description": "From luxury sedans to spacious buses with premium interiors and entertainment systems"
+                  }
+                }
+              ]
+            }
+          })
+        }} />
       </Helmet>
 
       {/* Hero Section */}
