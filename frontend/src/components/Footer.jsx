@@ -88,7 +88,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-silver-gray text-sm">
               <li className="flex items-start space-x-2">
-                <Phone size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />
+                <Phone size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
                 <div className="flex flex-col">
                   <a href="tel:+919900109686" className="hover:text-royal-blue transition-colors">+91 99001 09686</a>
                   <a href="tel:+919743484699" className="hover:text-royal-blue transition-colors">+91 97434 84699</a>
@@ -96,7 +96,7 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start space-x-2">
-                <Mail size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />
+                <Mail size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
                 <div className="flex flex-col">
                   <a href="mailto:info@mntravels.in" className="hover:text-royal-blue transition-colors">info@mntravels.in</a>
                   <a href="mailto:prasad@mntravels.in" className="hover:text-royal-blue transition-colors">prasad@mntravels.in</a>
@@ -104,11 +104,11 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start space-x-2">
-                <MapPin size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />
+                <MapPin size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
                 <span>123 Business Park, Sector 18<br />Gurgaon, Haryana - 122015</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Clock size={18} className="mt-0.5 text-royal-blue flex-shrink-0" />
+                <Clock size={18} className="mt-0.5 text-white md:text-royal-blue flex-shrink-0" />
                 <span>24/7 Operations</span>
               </li>
             </ul>
