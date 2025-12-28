@@ -353,6 +353,79 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Clients Section */}
+      <section className="pt-8 md:pt-12 pb-16 md:pb-20 relative overflow-hidden bg-white">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, #005bb5 1px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-royal-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-royal-blue/10 border border-royal-blue/20 rounded-full mb-6"
+            >
+              <Building2 className="text-royal-blue" size={16} />
+              <span className="text-sm font-semibold text-royal-blue uppercase tracking-wide">Our Clients</span>
+            </motion.div>
+            
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy mb-4 md:mb-6 leading-tight">
+              Trusted by Leading
+              <span className="block bg-gradient-to-r from-royal-blue to-blue-600 bg-clip-text text-transparent">
+                Organizations
+              </span>
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We are proud to serve some of the most respected companies across various industries
+            </p>
+          </motion.div>
+
+          {/* Clients Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {[
+              'Cipla Limited',
+              'Maistering India Pvt Ltd',
+              'Infifresh Foods Pvt Ltd',
+              'FIRST CONNECT DIGITAL PRIVATE LIMITED',
+              'Routematic - Nivaata Systems'
+            ].map((client, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-royal-blue/30 flex items-center justify-center min-h-[120px]"
+              >
+                <div className="text-center">
+                  <div className="font-bold text-navy text-sm md:text-base leading-tight">
+                    {client}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="pt-8 md:pt-12 pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50">
         {/* Background Pattern */}

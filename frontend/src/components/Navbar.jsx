@@ -136,29 +136,37 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '-100%' }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="fixed inset-y-0 left-0 w-80 max-w-[85vw] bg-navy shadow-2xl z-[9999] lg:hidden overflow-y-auto"
+              className="fixed inset-y-0 left-0 w-72 max-w-[80vw] bg-gradient-to-b from-navy via-navy to-navy/95 shadow-2xl z-[9999] lg:hidden overflow-y-auto"
             >
               <div className="flex flex-col h-full">
                 {/* Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-white/10">
-                  <div className="flex items-center">
+                <div className="flex items-center justify-between p-4 border-b border-white/10 bg-navy/50 backdrop-blur-sm">
+                  <Link
+                    to="/"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-2"
+                  >
                     <img 
                       src="/images/logo-new.png"
                       alt="MN Travels Logo" 
-                      className="h-[8.064rem] w-auto object-contain"
+                      className="h-10 w-auto object-contain"
                     />
-                  </div>
+                    <div className="flex flex-col">
+                      <span className="text-white font-bold text-sm leading-tight">MN Travels</span>
+                      <span className="text-gray-300 text-[10px] leading-tight">YOUR JOURNEY, OUR PRIORITY</span>
+                    </div>
+                  </Link>
                   <button
                     onClick={() => setIsOpen(false)}
                     className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
                     aria-label="Close menu"
                   >
-                    <X size={24} />
+                    <X size={20} />
                   </button>
                 </div>
 
                 {/* Navigation Links */}
-                <div className="flex-1 px-4 py-6 space-y-2">
+                <div className="flex-1 px-3 py-2 space-y-1">
                   {navLinks.map((link, index) => (
                     <motion.div
                       key={link.path}
@@ -169,29 +177,25 @@ const Navbar = () => {
                       <Link
                         to={link.path}
                         onClick={() => setIsOpen(false)}
-                        className={`flex items-center px-4 py-4 rounded-lg transition-all duration-200 ${
+                        className={`flex items-center px-4 py-3.5 rounded-xl transition-all duration-200 ${
                           isActive(link.path)
-                            ? 'bg-royal-blue text-white shadow-lg'
-                            : 'text-gray-200 hover:bg-white/10 hover:text-white'
+                            ? 'bg-royal-blue text-white shadow-lg shadow-royal-blue/30'
+                            : 'text-gray-200 hover:bg-white/5 hover:text-white'
                         }`}
                       >
-                        <span className="font-medium text-base">{link.label}</span>
-                        {isActive(link.path) && (
-                          <motion.div
-                            layoutId="mobile-indicator"
-                            className="ml-auto w-2 h-2 bg-white rounded-full"
-                          />
-                        )}
+                        <span className={`font-semibold text-sm ${isActive(link.path) ? 'text-white' : 'text-gray-200'}`}>
+                          {link.label}
+                        </span>
                       </Link>
                     </motion.div>
                   ))}
                 </div>
                 
                 {/* Mobile CTA Section */}
-                <div className="p-4 border-t border-white/10 space-y-3">
+                <div className="p-3 border-t border-white/10 bg-navy/50 backdrop-blur-sm space-y-2">
                   <a
                     href="tel:+919900109686"
-                    className="flex items-center justify-center space-x-2 px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-lg transition-all duration-200 font-medium"
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/15 border border-white/20 text-white rounded-xl transition-all duration-200 font-semibold text-sm"
                     onClick={() => setIsOpen(false)}
                   >
                     <Phone size={18} />
@@ -200,7 +204,7 @@ const Navbar = () => {
                   <Link
                     to="/contact"
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 bg-royal-blue hover:bg-blue-600 text-white rounded-lg text-center font-semibold shadow-lg transition-all duration-200"
+                    className="block px-4 py-3.5 bg-royal-blue hover:bg-blue-600 text-white rounded-xl text-center font-bold text-sm shadow-lg shadow-royal-blue/30 transition-all duration-200"
                   >
                     Book Now
                   </Link>

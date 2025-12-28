@@ -161,8 +161,8 @@ const Fleet = () => {
 
   const vehicleTypes = [
     { value: 'all', label: 'All Vehicles', icon: Car },
-    { value: 'sedan', label: 'Sedans', icon: Car },
-    { value: 'suv', label: 'SUVs', icon: Car },
+    { value: 'sedan', label: 'Sedans (40)', icon: Car },
+    { value: 'suv', label: 'SUVs (10)', icon: Car },
     { value: 'tempo', label: 'Tempo Traveller', icon: Car },
     { value: 'urbania', label: 'Urbania', icon: Car },
     { value: 'minibus', label: 'Mini Bus (20-50 Seater)', icon: Car },
