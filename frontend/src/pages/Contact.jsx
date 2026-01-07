@@ -144,7 +144,7 @@ const Contact = () => {
         <meta property="og:url" content="https://mntravels.in/contact" />
         <meta property="og:title" content="Contact Us - MN Travels | Get in Touch" />
         <meta property="og:description" content="Contact MN Travels for corporate transportation services. Submit your enquiry or request a quote for employee transport, airport transfers, and more. 24/7 support available." />
-        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         <meta property="og:site_name" content="MN Travels" />
         
         {/* Twitter Card Tags */}
@@ -152,7 +152,7 @@ const Contact = () => {
         <meta name="twitter:url" content="https://mntravels.in/contact" />
         <meta name="twitter:title" content="Contact Us - MN Travels" />
         <meta name="twitter:description" content="Contact MN Travels for corporate transportation services. Submit your enquiry or request a quote for employee transport, airport transfers, and more." />
-        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{

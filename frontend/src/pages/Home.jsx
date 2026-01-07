@@ -81,7 +81,7 @@ const Home = () => {
         <meta property="og:url" content="https://mntravels.in" />
         <meta property="og:title" content="MN Travels - Premium Corporate Transportation Services | Employee Transport, Airport Transfers" />
         <meta property="og:description" content="Premium corporate transportation services trusted by MNCs & IT companies. Employee transport, airport transfers, hotel adhoc transport, local & outstation trips. Fleet from 4 to 50 seater vehicles. 24/7 service available." />
-        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         <meta property="og:site_name" content="MN Travels" />
         
         {/* Twitter Card Tags */}
@@ -89,7 +89,7 @@ const Home = () => {
         <meta name="twitter:url" content="https://mntravels.in" />
         <meta name="twitter:title" content="MN Travels - Premium Corporate Transportation Services" />
         <meta name="twitter:description" content="Premium corporate transportation services. Employee transport, airport transfers, and corporate travel solutions trusted by MNCs and IT companies." />
-        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{

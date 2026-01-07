@@ -212,7 +212,7 @@ const Fleet = () => {
         <meta property="og:url" content="https://mntravels.in/fleet" />
         <meta property="og:title" content="Vehicle Fleet - Sedans, SUVs, Tempo Traveller, Mini Bus, Premium & Luxury Cars | MN Travels" />
         <meta property="og:description" content="Explore our diverse fleet: Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), Premium & Luxury cars. All vehicles with AC, GPS tracking, premium interiors." />
-        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         <meta property="og:site_name" content="MN Travels" />
         
         {/* Twitter Card Tags */}
@@ -220,7 +220,7 @@ const Fleet = () => {
         <meta name="twitter:url" content="https://mntravels.in/fleet" />
         <meta name="twitter:title" content="Vehicle Fleet - MN Travels" />
         <meta name="twitter:description" content="Explore our diverse fleet of vehicles including Sedans, SUVs, Tempo Traveller, Urbania, Mini Bus (20-50 Seater), and all types of premium & luxurious cars." />
-        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{

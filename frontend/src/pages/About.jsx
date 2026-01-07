@@ -68,7 +68,7 @@ const About = () => {
         <meta property="og:url" content="https://mntravels.in/about" />
         <meta property="og:title" content="About Us - MN Travels | Corporate Transportation Company" />
         <meta property="og:description" content="Learn about MN Travels - our mission, vision, and commitment to providing premium corporate transportation services. 20+ years of founder experience." />
-        <meta property="og:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta property="og:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         <meta property="og:site_name" content="MN Travels" />
         
         {/* Twitter Card Tags */}
@@ -76,7 +76,7 @@ const About = () => {
         <meta name="twitter:url" content="https://mntravels.in/about" />
         <meta name="twitter:title" content="About Us - MN Travels" />
         <meta name="twitter:description" content="Learn about MN Travels - our mission, vision, and commitment to providing premium corporate transportation services." />
-        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png" />
+        <meta name="twitter:image" content="https://mntravels.in/images/logo-new.png?v=2" />
         
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{

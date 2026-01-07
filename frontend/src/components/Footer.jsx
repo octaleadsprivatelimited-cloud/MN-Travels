@@ -21,7 +21,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-start mb-1">
               <img 
-                src="/images/logo-new.png"
+                src="/images/logo-new.png?v=2"
                 alt="MN Travels Logo" 
                 className="h-32 md:h-40 w-auto object-contain"
               />

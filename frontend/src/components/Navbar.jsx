@@ -61,7 +61,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               <img 
-                src="/images/logo-new.png"
+                src="/images/logo-new.png?v=2"
                 alt="MN Travels Logo" 
                 className="h-[8.064rem] md:h-[9.408rem] w-auto object-contain"
               />
@@ -147,7 +147,7 @@ const Navbar = () => {
                     className="flex items-center gap-2"
                   >
                     <img 
-                      src="/images/logo-new.png"
+                      src="/images/logo-new.png?v=2"
                       alt="MN Travels Logo" 
                       className="h-10 w-auto object-contain"
                     />
