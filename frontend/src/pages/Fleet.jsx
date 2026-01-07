@@ -12,6 +12,7 @@ const Fleet = () => {
     const imageMap = {
       '04 Seater Sedan': '/images/04 Seater Sedan.jpg',
       '07 Seater Innova': '/images/07 Seater Innova.jpg',
+      'Innova Crysta': '/images/07 Seater Innova.jpg',
       '13/17 Seater Tempo Traveller': '/images/13,17 Seater Tempo Traveller.jpg',
       '20 Seater Urbania': '/images/20 Seater Urbania.jpg',
       '25 Seater Mini Bus': '/images/25 Seater Mini Bus.jpg',
@@ -115,6 +116,15 @@ const Fleet = () => {
       features: ['Climate Control', 'Premium Leather', 'Massage Seats', 'Premium Audio', 'Chauffeur Service'],
       isAvailable: true,
     },
+    {
+      _id: '11',
+      name: 'Innova Crysta',
+      type: 'innova-crysta',
+      capacity: '7',
+      description: 'Premium Innova Crysta with spacious interiors, perfect for comfortable group travel with modern amenities',
+      features: ['AC', 'GPS Tracking', 'Comfortable Seating', 'Luggage Space', 'Rear AC', 'Premium Interior'],
+      isAvailable: true,
+    },
   ];
 
   const getVehicleIcon = (type) => {
@@ -132,6 +142,8 @@ const Fleet = () => {
       case 'premium':
         return Car;
       case 'luxury':
+        return Car;
+      case 'innova-crysta':
         return Car;
       default:
         return Car;
@@ -154,6 +166,8 @@ const Fleet = () => {
         return 'from-rose-500 via-pink-600 to-red-600';
       case 'luxury':
         return 'from-amber-500 via-yellow-600 to-orange-600';
+      case 'innova-crysta':
+        return 'from-purple-500 via-purple-600 to-pink-600';
       default:
         return 'from-royal-blue via-blue-600 to-cyan-600';
     }
@@ -163,6 +177,7 @@ const Fleet = () => {
     { value: 'all', label: 'All Vehicles', icon: Car },
     { value: 'sedan', label: 'Sedans (40)', icon: Car },
     { value: 'suv', label: 'SUVs (10)', icon: Car },
+    { value: 'innova-crysta', label: 'Innova Crysta (10)', icon: Car },
     { value: 'tempo', label: 'Tempo Traveller', icon: Car },
     { value: 'urbania', label: 'Urbania', icon: Car },
     { value: 'minibus', label: 'Mini Bus (20-50 Seater)', icon: Car },
